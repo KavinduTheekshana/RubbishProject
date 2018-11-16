@@ -12,14 +12,14 @@
                                 @csrf
         
                                 <div class="form-group row">
-                                    <label for="Category" class="col-sm-4 col-form-label text-md-right"></label>
+                                    <label for="Category" class="col-sm-4 col-form-label text-md-right">Enter Category</label>
         
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                        <input id="category" type="category" class="form-control" name="category" value="{{ old('category') }}" required autofocus>
         
                                         @if ($errors->has('Category'))
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('email') }}</strong>
+                                                <strong>{{ $errors->first('category') }}</strong>
                                             </span>
                                         @endif
                                     </div>
@@ -27,7 +27,7 @@
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                            {{ __('Login') }}
+                                            Add Category
                                         </button>
                                     </div>
                                 </div>
