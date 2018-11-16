@@ -8,7 +8,7 @@
                 <div class="card-header">Catogary</div>
 
                 <div class="card-body">
-                        <form method="POST" action="{{ url('/addList') }}">
+                        <form method="POST" action="{{url('/addcategory')}}">
                                 @csrf
         
                                 <div class="form-group row">

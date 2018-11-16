@@ -23,5 +23,7 @@ Route::get('/post', 'PostController@post');
 
 Route::get('/profile', 'ProfileController@profile');
 
-Route::get('/list', 'ListController@list');
+Route::get('/category', 'categoryController@category');
+
+Route::get('/addcategory', 'categoryController@addcategory');
 
