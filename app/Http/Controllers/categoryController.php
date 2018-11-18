@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-//use Symfony\Component\HttpFoundation\Request;
+use App\Category;
+use DB;
 
 class categoryController extends Controller
 {
@@ -16,6 +17,13 @@ class categoryController extends Controller
         $this->validate($request,[
             'category'=>'required'
         ]);
-        return 'validation passed';
+        $category = new Category;
+        $category->category=$request->input('category');
+        $category->save();
+        return redirect('/category')->with('response','Category Added Sucessfully');
+
+        // $category = $request->input('category');
+        // $category->save();
+        
     }
 }
