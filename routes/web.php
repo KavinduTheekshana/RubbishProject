@@ -25,5 +25,7 @@ Route::get('/profile', 'ProfileController@profile');
 
 Route::get('/category', 'categoryController@category');
 
-Route::post('/addcategory', 'categoryController@addcategory');
+Route::post('/addCategory', 'categoryController@addcategory');
+
+Route::post('/addProfile', 'ProfileController@addProfile');
 

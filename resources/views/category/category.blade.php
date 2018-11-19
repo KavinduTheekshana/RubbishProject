@@ -4,11 +4,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
+            {{-- @if(count($errors)>0)
+                @foreach ($errors->all()as $error)
+                    <div class="alert alert-danger">{{$error}}</div>    
+                @endforeach
+            @endif --}}
+
+            @if (session('response'))
+                <div class="alert alert-success">{{session('response')}}</div>
+            @endif
+
             <div class="card">
                 <div class="card-header">Catogary</div>
 
                 <div class="card-body">
-                        <form method="POST" action="{{url('/addcategory')}}">
+                        <form method="POST" action="{{url('/addCategory')}}">
                                 @csrf
         
                                 <div class="form-group row">

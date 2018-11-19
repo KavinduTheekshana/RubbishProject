@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Category;
 use DB;
+use App\Categorie;
 
 class categoryController extends Controller
 {
@@ -17,9 +17,9 @@ class categoryController extends Controller
         $this->validate($request,[
             'category'=>'required'
         ]);
-        $category = new Category;
-        $category->category=$request->input('category');
-        $category->save();
+        $categories = new Categorie();
+        $categories->category=$request->input('category');
+        $categories->save();
         return redirect('/category')->with('response','Category Added Sucessfully');
 
         // $category = $request->input('category');
