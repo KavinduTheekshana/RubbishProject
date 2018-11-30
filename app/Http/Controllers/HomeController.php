@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Admin.Dashboard');
+        return view('admin.index');
     }
+
+    public function getMember(){
+        $data = DB::table('users')->count();
+        return view('admin.Dashboard',['users'=>$data]);
+        // return view('admin.Dashboard');
+      }
 }
