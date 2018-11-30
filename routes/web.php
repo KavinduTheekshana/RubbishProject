@@ -11,8 +11,15 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('auth.register');
+// });
+
 Route::get('/', function () {
     return view('auth.login');
+});
+Route::get('/register', function () {
+    return view('auth.register');
 });
 
 Auth::routes();
@@ -28,4 +35,3 @@ Route::get('/category', 'categoryController@category');
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
-

@@ -9,8 +9,8 @@
 
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="Auth/css/style.css">
+    <link rel="stylesheet" type="text/css" href="Auth/css/util.css">
 
 </head>
 

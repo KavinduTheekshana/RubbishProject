@@ -7,24 +7,24 @@
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="Auth/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="Auth/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="Auth/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="Auth/css/util.css">
+    <link rel="stylesheet" type="text/css" href="Auth/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -73,7 +73,8 @@
 
 					<div class="flex-sb-m w-full p-b-48">
 						<div class="contact100-form-checkbox">
-							<a href="{{ route('register') }}" class="txt3" >
+							{{--  <a href="{{ route('register') }}" class="txt3" >  --}}
+                            <a href="{{url('/register')}}" class="txt3" >
                                 Register As Volunteer
 							</a>
 						</div>
@@ -100,21 +101,21 @@
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script src="Auth/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="animsition/js/animsition.min.js"></script>
+	<script src="Auth/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="bootstrap/js/popper.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="Auth/bootstrap/js/popper.js"></script>
+	<script src="Auth/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="select2/select2.min.js"></script>
+	<script src="Auth/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="daterangepicker/moment.min.js"></script>
-	<script src="daterangepicker/daterangepicker.js"></script>
+	<script src="Auth/daterangepicker/moment.min.js"></script>
+	<script src="Auth/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="countdowntime/countdowntime.js"></script>
+	<script src="Auth/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="Auth/js/main.js"></script>
 
 </body>
 </html>
