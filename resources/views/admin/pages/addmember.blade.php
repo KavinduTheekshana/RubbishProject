@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Simple Tables</title>
+  <title>AdminLTE 2 | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -27,28 +27,14 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
-  <style type="text/css">
-  .avatar{
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-  }
-  .avatar img{
-    width: 100%;
-    height: auto;
-  }
-</style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="Admin/index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -90,54 +76,6 @@
                     </a>
                   </li>
                   <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
                 </ul>
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
@@ -157,27 +95,6 @@
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
                     </a>
                   </li>
                 </ul>
@@ -202,51 +119,10 @@
                         Design some buttons
                         <small class="pull-right">20%</small>
                       </h3>
-                      <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Create a nice theme
-                        <small class="pull-right">40%</small>
-                      </h3>
-                      <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Some task I need to do
-                        <small class="pull-right">60%</small>
-                      </h3>
-                      <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">60% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Make beautiful transitions
-                        <small class="pull-right">80%</small>
-                      </h3>
-                      <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
                         </div>
                       </div>
                     </a>
@@ -309,7 +185,10 @@
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -327,7 +206,7 @@
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
+          <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
@@ -344,14 +223,14 @@
             </span>
           </a>
         </li>
-        <li class="active">
+        <li >
           <a href="{{url('members')}}">
             <i class="fa fa-users"></i> <span>Members</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
-        <li>
+        <li class="active">
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
             <span class="pull-right-container">
@@ -362,7 +241,7 @@
           <a href="../widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green">Hot</small>
             </span>
           </a>
         </li>
@@ -419,8 +298,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
         <li>
@@ -442,7 +321,7 @@
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
             <span class="pull-right-container">
@@ -450,15 +329,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="../examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="../examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -504,73 +383,176 @@
     <!-- /.sidebar -->
   </aside>
 
+  <!-- =============================================== -->
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        MEMBERS LIST
-        <small>All Members are Here</small>
+        ADD MEMBERS
+        <small>add all types of members</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Members</li>
+        <li class="active">Add Member</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
 
-      <!-- /.row -->
+      <!-- Default box -->
       <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Members Details</h3>
-
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Members And Save Database</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Reason</th>
-                </tr>
+            <!-- form start -->
+            <form role="form" action="{{action('ProfileController@addProfile')}}" method="POST" enctype="multipart/form-data">
+              @csrf
+              @if (count($errors) > 0)
+                <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+                  color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+                <strong>Whoops!</strong> There were some problems with your input.<br>
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+              @endif
 
-                @foreach($members as $row)
-                <tr>
-                  <td>{{$row->id}}</td>
-                  <td>{{$row->name}}</td>
-                  <td>{{$row->id}}</td>
-                  <td><div class="avatar"><img src="{{$row->profile_pic}}"></div></td>
-                  <!-- <td><span class="label label-success">Approved</span></td> -->
-                  <td>{{$row->email}}</td>
-                </tr>
-                @endforeach
+              @if (session('status'))
+                <div class="alert alert-success">
+                  {{ session('status') }}
+                </div>
+              @endif
+              
+              <div class="box-body">
 
-              </table>
-            </div>
-            <!-- /.box-body -->
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" class="form-control"  placeholder="Enter Full Name" name="name">
+                </div>
+                <div class="form-group">
+                  <label >Email address</label>
+                  <input type="email" class="form-control"  placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                  <label >Password</label>
+                  <input type="password" class="form-control"  placeholder="Password" name="password">
+                </div>
+                <div class="form-group">
+                  <label >Password Confirm</label>
+                  <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
+                </div>
+
+                <div class="form-group">
+                  <label >Date of Birth</label>
+                  <div class="row">
+                  <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="DD" name="date">
+                  </div>
+                  <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="MM" name="month">
+                  </div>
+                  <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="YYYY" name="year">
+                  </div>
+                </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Gender</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="gender" value="Male" checked>
+                        Male
+                    </label>
+                  </div>
+
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="gender"  value="Female">
+                      Female
+                    </label>
+                  </div>
+                  </div>
+
+                <div class="form-group">
+                  <label >City</label>
+                  <input type="text" class="form-control" placeholder="Enter Your City" name="city">
+                </div>
+
+                <div class="form-group">
+                  <label>Suburb</label>
+                  <input type="text" class="form-control" placeholder="Enter Your Suburb" name="suburb">
+                </div>
+
+                <div class="form-group">
+                  <label>Job Type</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="job" value="Admin" checked>
+                        Admin
+                    </label>
+                  </div>
+
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="job"  value="Staff">
+                      Staff
+                    </label>
+                  </div>
+
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="job"  value="Captain">
+                      Captain
+                    </label>
+                  </div>
+
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="job" value="Volunteer">
+                      Volunteer
+                    </label>
+                  </div>
+                  </div>
+
+
+                <div class="form-group">
+                  <label for="exampleInputFile">Input Profile Picture</label>
+                  <input type="file" id="exampleInputFile" name="profile_pic">
+                </div>
+
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
           </div>
           <!-- /.box -->
+
+
+
+
         </div>
+        <!-- /.box-footer-->
       </div>
+      <!-- /.box -->
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
@@ -584,6 +566,7 @@
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
@@ -779,7 +762,7 @@
 <script src="Admin/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Slimscroll -->
+<!-- SlimScroll -->
 <script src="Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="Admin/bower_components/fastclick/lib/fastclick.js"></script>
@@ -787,5 +770,10 @@
 <script src="Admin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="Admin/dist/js/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
 </body>
 </html>

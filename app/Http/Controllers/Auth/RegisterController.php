@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'city' => $data['city'],
             'suburb' => $data['suburb'],
-            'job' =>('volunteer'),
+            'job' =>('Volunteer'),
         ]);
     }
 }

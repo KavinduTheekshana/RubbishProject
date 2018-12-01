@@ -22,8 +22,5 @@ class categoryController extends Controller
         $categories->save();
         return redirect('/category')->with('response','Category Added Sucessfully');
 
-        // $category = $request->input('category');
-        // $category->save();
-        
     }
 }

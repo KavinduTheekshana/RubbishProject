@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        return view('auth.login');
     }
 
     public function getMember(){
