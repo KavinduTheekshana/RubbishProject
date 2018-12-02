@@ -233,7 +233,7 @@
           </a>
         </li>
 
-        <li class="active">
+        <li>
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
             <span class="pull-right-container">
@@ -241,7 +241,7 @@
           </a>
         </li>
 
-        <li>
+        <li class="active">
           <a href="{{url('profile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
@@ -402,12 +402,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        ADD MEMBERS
-        <small>add all types of members</small>
+        Edit Profile
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Add Member</li>
+        <li><a href="#">Profile</a></li>
+        <li class="active">Edit Profile</li>
       </ol>
     </section>
 
@@ -421,11 +421,11 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add Members And Save Database</h3>
+              <h3 class="box-title">Edit Your Profile Details</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{action('ProfileController@addProfile')}}" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{action('ProfileController@updateProfile')}}" method="POST" enctype="multipart/form-data">
               @csrf
               @if (count($errors) > 0)
                 <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
@@ -449,20 +449,20 @@
 
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input type="text" class="form-control"  placeholder="Enter Full Name" name="name">
+                  <input type="text" class="form-control"  value="{{$profile->name}}" name="name">
                 </div>
                 <div class="form-group">
                   <label >Email address</label>
-                  <input type="email" class="form-control"  placeholder="Enter email" name="email">
+                  <input type="email" class="form-control"  value="{{$profile->email}}" name="email" disabled>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label >Password</label>
                   <input type="password" class="form-control"  placeholder="Password" name="password">
                 </div>
                 <div class="form-group">
                   <label >Password Confirm</label>
                   <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
-                </div>
+                </div> -->
 
                 <div class="form-group">
                   <label >Date of Birth</label>
@@ -498,12 +498,12 @@
 
                 <div class="form-group">
                   <label >City</label>
-                  <input type="text" class="form-control" placeholder="Enter Your City" name="city">
+                  <input type="text" class="form-control" value="{{$profile->city}}" name="city">
                 </div>
 
                 <div class="form-group">
                   <label>Suburb</label>
-                  <input type="text" class="form-control" placeholder="Enter Your Suburb" name="suburb">
+                  <input type="text" class="form-control" value="{{$profile->suburb}}" name="suburb">
                 </div>
 
                 <div class="form-group">

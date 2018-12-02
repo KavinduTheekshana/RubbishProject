@@ -253,17 +253,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="Admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="{{$profile->profile_pic}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{$profile->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{$profile->profile_pic}}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{$profile->name}} - {{$profile->job}}
+                  <small>Member since -{{$profile->created_at}}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -308,11 +308,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{$profile->profile_pic}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p>{{$profile->name}}</p>
+          <a><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -331,10 +331,9 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview menu-open">
-          <a href="{{url('/')}}">
+          <a href="{{url('/dash')}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
-
         </li>
         <li >
           <a href="{{url('members')}}">
@@ -346,6 +345,13 @@
         <li>
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url('profile')}}">
+            <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -508,10 +514,10 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa  fa-hourglass-start"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">CPU Traffic</span>
+              <span class="info-box-text">Pending to Clean</span>
               <span class="info-box-number">90<small>%</small></span>
             </div>
             <!-- /.info-box-content -->
@@ -521,10 +527,10 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-check"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Likes</span>
+              <span class="info-box-text">Total Clean Points</span>
               <span class="info-box-number">41,410</span>
             </div>
             <!-- /.info-box-content -->
@@ -975,7 +981,8 @@
                   <ul class="users-list clearfix">
                     @foreach($members as $row)
                     <li>
-                      <img src="{{$row->profile_pic}}" alt="User Image">
+                      <img src="{{$row->profile_pic}}" alt="User Image" style="border-radius: 50%;width: 80px;height: 80px;
+                      overflow: hidden;position: relative;display: inline-block;">
                       <a class="users-list-name" href="#">{{$row->name}}</a>
                       <span class="users-list-date">{{$row->id}}</span>
                     </li>

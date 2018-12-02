@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Blank Page</title>
+  <title>AdminLTE 2 | User Profile</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -29,7 +29,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<!-- Site wrapper -->
 <div class="wrapper">
 
   <header class="main-header">
@@ -66,7 +65,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{$profile->profile_pic}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -76,6 +75,54 @@
                     </a>
                   </li>
                   <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i> Today</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
@@ -95,6 +142,27 @@
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
                     </a>
                   </li>
                 </ul>
@@ -120,9 +188,50 @@
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Create a nice theme
+                        <small class="pull-right">40%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Some task I need to do
+                        <small class="pull-right">60%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Make beautiful transitions
+                        <small class="pull-right">80%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">80% Complete</span>
                         </div>
                       </div>
                     </a>
@@ -148,7 +257,7 @@
 
                 <p>
                   {{$profile->name}} - {{$profile->job}}
-                  <small>Member since Nov. 2012</small>
+                  <small>Member since -{{$profile->created_at}}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -172,7 +281,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="logout" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -185,10 +294,7 @@
       </div>
     </nav>
   </header>
-
-  <!-- =============================================== -->
-
-  <!-- Left side column. contains the sidebar -->
+  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -206,7 +312,7 @@
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
+              <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
@@ -216,15 +322,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-
         <li>
           <a href="{{url('/dash')}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-            </span>
           </a>
         </li>
-
         <li >
           <a href="{{url('members')}}">
             <i class="fa fa-users"></i> <span>Members</span>
@@ -232,28 +334,25 @@
             </span>
           </a>
         </li>
-
-        <li class="active">
+        <li>
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
-
-        <li>
+        <li class="active">
           <a href="{{url('profile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
-
         <li>
           <a href="../widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">Hot</small>
+              <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>
@@ -342,13 +441,13 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li class="active"><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
             <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
             <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
             <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
             <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
             <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
             <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
@@ -395,176 +494,346 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- =============================================== -->
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        ADD MEMBERS
-        <small>add all types of members</small>
+        User Profile
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Add Member</li>
+        <li class="active">User profile</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
 
-      <!-- Default box -->
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-6">
-          <!-- general form elements -->
+        <div class="col-md-3">
+
+          <!-- Profile Image -->
           <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Add Members And Save Database</h3>
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="{{$profile->profile_pic}}" alt="User profile picture">
+
+              <h3 class="profile-username text-center">{{$profile->name}}</h3>
+
+              <p class="text-muted text-center">{{$profile->job}}</p>
+
+              <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                  <b>Gender</b> <a class="pull-right">{{$profile->gender}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>City</b> <a class="pull-right">{{$profile->city}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Suburb</b> <a class="pull-right">{{$profile->suburb}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Birthday</b> <a class="pull-right">{{$profile->birthday}}</a>
+                </li>
+              </ul>
+
+              <a href="{{url('editprofile')}}" class="btn btn-primary btn-block"><b>Edit Profile Details</b></a>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" action="{{action('ProfileController@addProfile')}}" method="POST" enctype="multipart/form-data">
-              @csrf
-              @if (count($errors) > 0)
-                <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
-                  color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
-                <strong>Whoops!</strong> There were some problems with your input.<br>
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                    @endforeach
-                  </ul>
-                </div>
-              @endif
-
-              @if (session('status'))
-                <div class="alert alert-success">
-                  {{ session('status') }}
-                </div>
-              @endif
-
-              <div class="box-body">
-
-                <div class="form-group">
-                  <label>Full Name</label>
-                  <input type="text" class="form-control"  placeholder="Enter Full Name" name="name">
-                </div>
-                <div class="form-group">
-                  <label >Email address</label>
-                  <input type="email" class="form-control"  placeholder="Enter email" name="email">
-                </div>
-                <div class="form-group">
-                  <label >Password</label>
-                  <input type="password" class="form-control"  placeholder="Password" name="password">
-                </div>
-                <div class="form-group">
-                  <label >Password Confirm</label>
-                  <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
-                </div>
-
-                <div class="form-group">
-                  <label >Date of Birth</label>
-                  <div class="row">
-                  <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="DD" name="date">
-                  </div>
-                  <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="MM" name="month">
-                  </div>
-                  <div class="col-xs-3">
-                    <input type="text" class="form-control" placeholder="YYYY" name="year">
-                  </div>
-                </div>
-                </div>
-
-                <div class="form-group">
-                  <label>Gender</label>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="gender" value="Male" checked>
-                        Male
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="gender"  value="Female">
-                      Female
-                    </label>
-                  </div>
-                  </div>
-
-                <div class="form-group">
-                  <label >City</label>
-                  <input type="text" class="form-control" placeholder="Enter Your City" name="city">
-                </div>
-
-                <div class="form-group">
-                  <label>Suburb</label>
-                  <input type="text" class="form-control" placeholder="Enter Your Suburb" name="suburb">
-                </div>
-
-                <div class="form-group">
-                  <label>Job Type</label>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="job" value="Admin" checked>
-                        Admin
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="job"  value="Staff">
-                      Staff
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="job"  value="Captain">
-                      Captain
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="job" value="Volunteer">
-                      Volunteer
-                    </label>
-                  </div>
-                  </div>
-
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Input Profile Picture</label>
-                  <input type="file" id="exampleInputFile" name="profile_pic">
-                </div>
-
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
+            <!-- /.box-body -->
           </div>
           <!-- /.box -->
 
+          <!-- About Me Box -->
 
-
-
+          <!-- /.box -->
         </div>
-        <!-- /.box-footer-->
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
+              <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
+              <li><a href="#settings" data-toggle="tab">Settings</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="active tab-pane" id="activity">
+                <!-- Post -->
+                <div class="post">
+                  <div class="user-block">
+                    <img class="img-circle img-bordered-sm" src="Admin/dist/img/user1-128x128.jpg" alt="user image">
+                        <span class="username">
+                          <a href="#">Jonathan Burke Jr.</a>
+                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                        </span>
+                    <span class="description">Shared publicly - 7:30 PM today</span>
+                  </div>
+                  <!-- /.user-block -->
+                  <p>
+                    Lorem ipsum represents a long-held tradition for designers,
+                    typographers and the like. Some people hate it and argue for
+                    its demise, but others ignore the hate as they create awesome
+                    tools to help create filler text for everyone from bacon lovers
+                    to Charlie Sheen fans.
+                  </p>
+                  <ul class="list-inline">
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
+                    </li>
+                    <li class="pull-right">
+                      <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
+                        (5)</a></li>
+                  </ul>
+
+                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                </div>
+                <!-- /.post -->
+
+                <!-- Post -->
+                <div class="post clearfix">
+                  <div class="user-block">
+                    <img class="img-circle img-bordered-sm" src="Admin/dist/img/user7-128x128.jpg" alt="User Image">
+                        <span class="username">
+                          <a href="#">Sarah Ross</a>
+                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                        </span>
+                    <span class="description">Sent you a message - 3 days ago</span>
+                  </div>
+                  <!-- /.user-block -->
+                  <p>
+                    Lorem ipsum represents a long-held tradition for designers,
+                    typographers and the like. Some people hate it and argue for
+                    its demise, but others ignore the hate as they create awesome
+                    tools to help create filler text for everyone from bacon lovers
+                    to Charlie Sheen fans.
+                  </p>
+
+                  <form class="form-horizontal">
+                    <div class="form-group margin-bottom-none">
+                      <div class="col-sm-9">
+                        <input class="form-control input-sm" placeholder="Response">
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.post -->
+
+                <!-- Post -->
+                <div class="post">
+                  <div class="user-block">
+                    <img class="img-circle img-bordered-sm" src="Admin/dist/img/user6-128x128.jpg" alt="User Image">
+                        <span class="username">
+                          <a href="#">Adam Jones</a>
+                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                        </span>
+                    <span class="description">Posted 5 photos - 5 days ago</span>
+                  </div>
+                  <!-- /.user-block -->
+                  <div class="row margin-bottom">
+                    <div class="col-sm-6">
+                      <img class="img-responsive" src="Admin/dist/img/photo1.png" alt="Photo">
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <img class="img-responsive" src="Admin/dist/img/photo2.png" alt="Photo">
+                          <br>
+                          <img class="img-responsive" src="Admin/dist/img/photo3.jpg" alt="Photo">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                          <img class="img-responsive" src="Admin/dist/img/photo4.jpg" alt="Photo">
+                          <br>
+                          <img class="img-responsive" src="Admin/dist/img/photo1.png" alt="Photo">
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+
+                  <ul class="list-inline">
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
+                    </li>
+                    <li class="pull-right">
+                      <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
+                        (5)</a></li>
+                  </ul>
+
+                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                </div>
+                <!-- /.post -->
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="timeline">
+                <!-- The timeline -->
+                <ul class="timeline timeline-inverse">
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-red">
+                          10 Feb. 2014
+                        </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-envelope bg-blue"></i>
+
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+
+                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+
+                      <div class="timeline-body">
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                        quora plaxo ideeli hulu weebly balihoo...
+                      </div>
+                      <div class="timeline-footer">
+                        <a class="btn btn-primary btn-xs">Read more</a>
+                        <a class="btn btn-danger btn-xs">Delete</a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-aqua"></i>
+
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+
+                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
+                      </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-comments bg-yellow"></i>
+
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
+
+                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div>
+                      <div class="timeline-footer">
+                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-green">
+                          3 Jan. 2014
+                        </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-camera bg-purple"></i>
+
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
+
+                      <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
+
+                      <div class="timeline-body">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.tab-pane -->
+
+              <div class="tab-pane" id="settings">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+
+                    <div class="col-sm-10">
+                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
       </div>
-      <!-- /.box -->
+      <!-- /.row -->
 
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
@@ -578,7 +847,6 @@
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
@@ -774,18 +1042,11 @@
 <script src="Admin/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="Admin/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="Admin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="Admin/dist/js/demo.js"></script>
-<script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
-</script>
 </body>
 </html>

@@ -68,9 +68,9 @@
       <div class="col-half ">
         <h4>Gender</h4>
         <div class="input-group input100">
-          <input type="radio" name="gender" value="male" id="gender-male"/>
+          <input type="radio" name="gender" value="Male" id="gender-male"/>
           <label for="gender-male">Male</label>
-          <input type="radio" name="gender" value="female" id="gender-female"/>
+          <input type="radio" name="gender" value="Female" id="gender-female"/>
           <label for="gender-female">Female</label>
         </div>
       </div>

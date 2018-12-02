@@ -11,19 +11,14 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
-// use Illuminate\View\View;
-// use Illuminate\Support\Facades\Input;
-// use Illuminate\Support\Facades\File;
-// use Illuminate\Support\Facades\URL;
-// use Auth;
-// use App\Profile;
-// use Symfony\Component\Console\Input\Input;
 
 
 class ProfileController extends Controller
 {
     public function profile(){
-        return view('profile.profile');
+      $id =Auth::user()->id;
+      $profile = DB::table('users')->where(['id'=>$id])->first();
+      return view('admin.pages.profile',['profile'=>$profile]);
     }
 
     public function addProfile(Request $request){
@@ -42,7 +37,7 @@ class ProfileController extends Controller
        $users = new users();
        $users->name = $request->input('name');
        $users->email = $request->input('email');
-       $users->password = encrypt($request->input('password'));
+       $users->password = Hash::make($request['password']);
        $users->birthday = $request->input('year').'.'.$request->input('month').'.'.$request->input('date');
        $users->gender = $request->input('gender');
        $users->city = $request->input('city');
@@ -61,27 +56,50 @@ class ProfileController extends Controller
 
        $users->save();
        return redirect('addmembers')->with('status', 'Profile Added Sucessfully');
-        // return ('test');
-        // $this->validate($request,[
-        //     'name'=>'required',
-        //     'destination'=>'required',
-        //     'profile_pic'=>'required'
-        // ]);
 
-        // $profiles = new Profile();
-        // $profiles->name = $request->input('name');
-        // $profiles->user_id=Auth::user()->id;
-        // $profiles->destination = $request->input('destination');
-        //     if(Input::hasFile('profile_pic')){
-        //         $file=Input::file('profile_pic');
-        //         $file->move(public_path().'/uploads/',
-        //         $file->getClientOriginalName());
-        //         $url=URL::to("/").'/uploads/'.$file->getClientOriginalName();
-        //     }
+    }
 
-        // $profiles->profile_pic = $url;
-        // $profiles->save();
-        // return redirect('/home')->with('response','Profile Added Sucessfully');
-        // return redirect('/profile')->with('responce','Profile Addes Successfully');
+    public function editprofile(){
+      $id =Auth::user()->id;
+      $profile = DB::table('users')->where(['id'=>$id])->first();
+      return view('admin.pages.editprofile',['profile'=>$profile]);
+    }
+
+    public function updateProfile(Request $request){
+      $id =Auth::user()->id;
+      $this->validate($request, [
+        'name' => ['string', 'max:255'],
+        'password' => ['string', 'min:6', 'confirmed'],
+       ]);
+
+       $users = new users();
+       $users->name = $request->input('name');
+       $users->email = $request->input('email');
+       $users->password = Hash::make($request['password']);
+       $users->birthday = $request->input('year').'.'.$request->input('month').'.'.$request->input('date');
+       $users->gender = $request->input('gender');
+       $users->city = $request->input('city');
+       $users->suburb = $request->input('suburb');
+       $users->job = $request->input('job');
+            if(Input::hasFile('profile_pic')){
+                $file=Input::file('profile_pic');
+                $file->move(public_path().'/uploads/',
+                $file->getClientOriginalName());
+                $url=URL::to("/").'/uploads/'.$file->getClientOriginalName();
+                $users->profile_pic = $url;
+            }
+            else {
+              $users->profile_pic = 'http://localhost/basicwebsite/public/uploads/default.jpg';
+            }
+            $data=array(
+              'name' => $users->name,
+              'gender'=>$users->gender,
+              'city'=>$users->city,
+              'suburb'=> $users->suburb,
+            );
+            users::where('id',$id)->update($data);
+       $users->update();
+       return redirect('editprofile')->with('status', 'Profile Update Sucessfully');
+       // return view('admin.pages.editprofile',['profile'=>$profile]);
     }
 }

@@ -344,6 +344,7 @@
             </span>
           </a>
         </li>
+
         <li class="active">
           <a href="{{url('members')}}">
             <i class="fa fa-users"></i> <span>Members</span>
@@ -351,6 +352,7 @@
             </span>
           </a>
         </li>
+
         <li>
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
@@ -358,6 +360,15 @@
             </span>
           </a>
         </li>
+
+        <li>
+          <a href="{{url('profile')}}">
+            <i class="fa fa-user-circle-o"></i> <span>Profile</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        
         <li>
           <a href="../widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>

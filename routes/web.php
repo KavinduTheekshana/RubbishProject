@@ -26,19 +26,23 @@ Route::get('members','MemberController@index');
 
 Route::get('addmembers','MemberController@addmembers');
 
+Route::get('profile','ProfileController@profile');
+
+Route::get('editprofile','ProfileController@editprofile');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post', 'PostController@post');
 
-Route::post('/profile', 'ProfileController@profile');
-
 Route::get('/category', 'categoryController@category');
 
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
+
+Route::post('/updateProfile', 'ProfileController@updateProfile');
 
 Route::get('/dash', 'allController@dash');
 
