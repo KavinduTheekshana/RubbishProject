@@ -539,41 +539,95 @@
             <div class="box-header">
               <h3 class="box-title">Members Details</h3>
 
+
+
               <div class="box-tools">
+                <form role="search" method="post" action="{{action('MemberController@searchmember')}}">
+                  @csrf
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
+                    <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                   </div>
                 </div>
+                </form>
               </div>
+
+
+
+
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
+                <thead>
                 <tr>
                   <th>ID</th>
+                  <th>Image</th>
                   <th>Name</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Reason</th>
+                  <th>Change Job</th>
+                  <th>Email</th>
+                  <th>City</th>
+                  <th>Suburb</th>
+                  <th>Action</th>
                 </tr>
+              </thead>
 
+              <tbody>
                 @foreach($members as $row)
                 <tr>
                   <td>{{$row->id}}</td>
-                  <td>{{$row->name}}</td>
-                  <td>{{$row->id}}</td>
                   <td><div class="avatar"><img src="{{$row->profile_pic}}"></div></td>
-                  <!-- <td><span class="label label-success">Approved</span></td> -->
+
+                  <td>{{$row->name}}
+                  @if($row->job==='Admin')
+                    <span class="label label-primary">{{$row->job}}</span>
+                  @elseif($row->job==='Captain')
+                  <span class="label label-danger">{{$row->job}}</span>
+                  @elseif($row->job==='Volunteer')
+                  <span class="label label-success">{{$row->job}}</span>
+                  @else($row->job==='Staff')
+                  <span class="label label-warning">{{$row->job}}</span>
+                  @endif</td>
+                  <td>
+                    @if($row->job==='Admin')
+                    @else
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Change Job
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="changejobtocaptain/{{$row->id}}">Captain</a></li>
+                          <li><a href="changejobtovolunteer/{{$row->id}}">Volunteer</a></li>
+                          <li><a href="changejobtostaff/{{$row->id}}">Staff</a></li>
+                        </ul>
+                      </div>
+                    @endif
+                  </td>
                   <td>{{$row->email}}</td>
+                  <td>{{$row->city}}</td>
+                  <td>{{$row->suburb}}</td>
+
+
+                  <td>
+                    @if($row->job==='Admin')
+                    @else
+                    <a href="" class="btn btn-primary">View</a>
+                    <a href="" type="button" class="btn btn-warning">Hold</a>
+                    <a href="" type="button" class="btn btn-danger">Delete</a>
+                    @endif
+                  </td>
                 </tr>
                 @endforeach
+                <tbody>
 
               </table>
             </div>
             <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                {!! $members->links(); !!}
+              </ul>
+            </div>
           </div>
           <!-- /.box -->
         </div>

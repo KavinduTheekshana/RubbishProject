@@ -22,15 +22,19 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Auth::routes();
+
 Route::get('members','MemberController@index');
 
 Route::get('addmembers','MemberController@addmembers');
 
 Route::get('profile','ProfileController@profile');
 
+Route::get('postarticle','ProfileController@postarticle');
+
 Route::get('editprofile','ProfileController@editprofile');
 
-Auth::routes();
+Route::get('/dash', 'allController@dash');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -38,12 +42,20 @@ Route::get('/post', 'PostController@post');
 
 Route::get('/category', 'categoryController@category');
 
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('changejobtocaptain/{id}', 'MemberController@changejobtocaptain');
+Route::get('changejobtovolunteer/{id}', 'MemberController@changejobtovolunteer');
+Route::get('changejobtostaff/{id}', 'MemberController@changejobtostaff');
+
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
 
 Route::post('/updateProfile', 'ProfileController@updateProfile');
 
-Route::get('/dash', 'allController@dash');
+Route::post('/updatepassword', 'ProfileController@updatepassword');
 
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('/updateProfilepicture', 'ProfileController@updateProfilepicture');
+
+Route::post('/searchmember', 'MemberController@searchmember');

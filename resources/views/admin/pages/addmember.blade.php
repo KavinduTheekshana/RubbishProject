@@ -550,19 +550,12 @@
               </div>
             </form>
           </div>
-          <!-- /.box -->
-
-
-
-
         </div>
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
-
     </section>
-    <!-- /.content -->
   </div>
+  
+
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">

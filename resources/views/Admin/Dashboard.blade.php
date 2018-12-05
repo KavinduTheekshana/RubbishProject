@@ -357,6 +357,13 @@
           </a>
         </li>
         <li>
+          <a href="{{url('postarticle')}}">
+            <i class="fa fa-newspaper-o"></i> <span>Post Article</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
           <a href="">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
@@ -527,10 +534,10 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-check"></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-clock-o"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Clean Points</span>
+              <span class="info-box-text">PENDING TO Approve</span>
               <span class="info-box-number">41,410</span>
             </div>
             <!-- /.info-box-content -->
@@ -544,10 +551,10 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+            <span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
+              <span class="info-box-text">Total Clean Points</span>
               <span class="info-box-number">760</span>
             </div>
             <!-- /.info-box-content -->

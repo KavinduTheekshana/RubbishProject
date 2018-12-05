@@ -413,18 +413,12 @@
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
       <div class="row">
-        <!-- left column -->
         <div class="col-md-6">
-          <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Your Profile Details</h3>
+              <h3 class="box-title">Edit Profile Details</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
             <form role="form" action="{{action('ProfileController@updateProfile')}}" method="POST" enctype="multipart/form-data">
               @csrf
               @if (count($errors) > 0)
@@ -455,15 +449,6 @@
                   <label >Email address</label>
                   <input type="email" class="form-control"  value="{{$profile->email}}" name="email" disabled>
                 </div>
-                <!-- <div class="form-group">
-                  <label >Password</label>
-                  <input type="password" class="form-control"  placeholder="Password" name="password">
-                </div>
-                <div class="form-group">
-                  <label >Password Confirm</label>
-                  <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
-                </div> -->
-
                 <div class="form-group">
                   <label >Date of Birth</label>
                   <div class="row">
@@ -536,29 +521,112 @@
                     </label>
                   </div>
                   </div>
-
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Input Profile Picture</label>
-                  <input type="file" id="exampleInputFile" name="profile_pic">
-                </div>
-
-              <!-- /.box-body -->
-
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </form>
           </div>
-          <!-- /.box -->
-
-
-
-
         </div>
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
+
+
+      <div class="col-md-6">
+
+        <div class="box box-danger">
+          <div class="box-header with-border">
+            <h3 class="box-title">Update Password</h3>
+          </div>
+          <form role="form" action="{{action('ProfileController@updatepassword')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            @if (count($errors) > 0)
+              <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+                color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+              <strong>Whoops!</strong> There were some problems with your input.<br>
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+            @endif
+
+
+            @if (session('status2'))
+              <div class="alert alert-success">
+                {{ session('status2') }}
+              </div>
+            @endif
+
+            <div class="box-body">
+              <div class="form-group">
+                <label >Password</label>
+                <input type="password" class="form-control"  placeholder="Password" name="password">
+              </div>
+              <div class="form-group">
+                <label >Password Confirm</label>
+                <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
+              </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-danger">Update Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Update Profile Picture</h3>
+        </div>
+        <form role="form" action="{{action('ProfileController@updateProfilepicture')}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @if (count($errors) > 0)
+            <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+              color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+            <strong>Whoops!</strong> There were some problems with your input.<br>
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
+          @if (session('status3'))
+            <div class="alert alert-success">
+              {{ session('status3') }}
+            </div>
+          @endif
+
+          <div class="box-body">
+            <img src="{{$profile->profile_pic}}" class="img-circle center"
+              style="width:150px; height:150px;display: block;margin-left: auto; margin-right: auto;"alt="User Image">
+              <hr>
+
+              <div class="form-group">
+                <label for="exampleInputFile">Select Image</label>
+                <input type="file" id="exampleInputFile" name="profile_pic">
+              </div>
+
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-info">Update Profile Picture</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+      </div>
 
     </section>
     <!-- /.content -->

@@ -40,7 +40,22 @@
                 <div class="alert alert-success">{{session('response')}}</div>
             @endif
 
+						@if (count($errors) > 0)
+							<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br>
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
 
+						<!-- @if (count($errors) > 0)
+												<span class="invalid-feedback" role="alert">
+														<strong>{{ $errors->first('email') }}</strong>
+												</span>
+						@endif -->
 
 					<span class="login100-form-title p-b-32">
 						Account Login
@@ -52,11 +67,7 @@
 
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
                         <input class="input100" type="email" name="email">
-                        @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
+
 						<span class="focus-input100"></span>
 					</div>
 
