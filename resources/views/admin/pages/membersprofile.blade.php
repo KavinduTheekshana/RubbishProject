@@ -516,24 +516,24 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="{{$profile->profile_pic}}" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="{{$user->profile_pic}}" alt="User profile picture">
 
-              <h3 class="profile-username text-center">{{$profile->name}}</h3>
+              <h3 class="profile-username text-center">{{$user->name}}</h3>
 
-              <p class="text-muted text-center">{{$profile->job}}</p>
+              <p class="text-muted text-center">{{$user->job}}</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Gender</b> <a class="pull-right">{{$profile->gender}}</a>
+                  <b>Gender</b> <a class="pull-right">{{$user->gender}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>City</b> <a class="pull-right">{{$profile->city}}</a>
+                  <b>City</b> <a class="pull-right">{{$user->city}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Suburb</b> <a class="pull-right">{{$profile->suburb}}</a>
+                  <b>Suburb</b> <a class="pull-right">{{$user->suburb}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Birthday</b> <a class="pull-right">{{$profile->birthday}}</a>
+                  <b>Birthday</b> <a class="pull-right">{{$user->birthday}}</a>
                 </li>
               </ul>
 

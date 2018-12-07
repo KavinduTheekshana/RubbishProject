@@ -565,6 +565,7 @@
                   <th>ID</th>
                   <th>Image</th>
                   <th>Name</th>
+                  <th>Job Type</th>
                   <th>Change Job</th>
                   <th>Email</th>
                   <th>City</th>
@@ -579,8 +580,9 @@
                   <td>{{$row->id}}</td>
                   <td><div class="avatar"><img src="{{$row->profile_pic}}"></div></td>
 
-                  <td>{{$row->name}}
-                  @if($row->job==='Admin')
+                  <td>
+                  {{$row->name}}</td>
+                  <td>@if($row->job==='Admin')
                     <span class="label label-primary">{{$row->job}}</span>
                   @elseif($row->job==='Captain')
                   <span class="label label-danger">{{$row->job}}</span>
@@ -611,16 +613,42 @@
                   <td>
                     @if($row->job==='Admin')
                     @else
-                    <a href="" class="btn btn-primary">View</a>
+                    <a href="viewprofile/{{$row->id}}" class="btn btn-primary">View</a>
                     <a href="" type="button" class="btn btn-warning">Hold</a>
-                    <a href="" type="button" class="btn btn-danger">Delete</a>
+                    <span><a  type="button" data-toggle="modal" data-target="#modal-danger" class="btn btn-danger remove">Delete</a>
+                      <div class="modal modal-danger fade" id="modal-danger">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title">Delete Member</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Are You Sure the Delete This Member?&hellip;</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline" data-dismiss="modal">Close</button>
+                              <a href="deleteprofile/{{$row->id}}" type="button" class="btn btn-outline">Yes I want Delete</a>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                    </span>
                     @endif
                   </td>
                 </tr>
+
+
+
                 @endforeach
                 <tbody>
 
               </table>
+
+
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -629,6 +657,9 @@
               </ul>
             </div>
           </div>
+
+
+
           <!-- /.box -->
         </div>
       </div>
@@ -853,4 +884,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="Admin/dist/js/demo.js"></script>
 </body>
+
+
+
+
+
 </html>

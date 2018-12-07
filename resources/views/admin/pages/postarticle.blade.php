@@ -30,6 +30,32 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+        <style media="screen">
+        .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+#img-upload{
+  width: 50%;
+}
+        </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -507,8 +533,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Text Editors
-        <small>Advanced form element</small>
+        Post Article
+        <small>post articles to improve public awareness</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -522,21 +548,39 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-
-
             </div>
-
             <div class="box-body pad form-group">
-              <form>
+
+
+
+              <form role="form" action="{{action('PostController@addPost')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <h5>Title</h5>
-                <input type="text" class="form-control"></input>
+                  <input type="text" class="form-control" name="post_title"></input>
+                  <br>
+                    <div class="form-group">
+                      <h5>Upload Image</h5>
+                      <div class="input-group">
+                        <span class="input-group-btn">
+                          <span class="btn btn-default btn-file">
+                            Browse… <input name="post_image" type="file" id="imgInp">
+                          </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                      <img id='img-upload'/>
+                    </div>
+                    <h5>Body</h5>
+                      <textarea id="editor1" name="post_body" rows="10" cols="80"></textarea>
+                        <hr>
+                        <button type="submit" class="btn btn-success btn-lg pull-right">Publish Article</button>
+                  </form>
 
 
-                <h5>Body</h5>
-                <textarea id="editor1" name="editor1" rows="10" cols="80"></textarea>
-                <hr>
-                <button type="button" class="btn btn-success btn-lg pull-right">Publish Article</button>
-              </form>
+
+
+
+
             </div>
           </div>
           <!-- /.box -->
@@ -776,6 +820,45 @@
     //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
   })
+</script>
+
+<script type="text/javascript">
+$(document).ready( function() {
+    	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [label]);
+		});
+
+		$('.btn-file :file').on('fileselect', function(event, label) {
+
+		    var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+
+		    if( input.length ) {
+		        input.val(log);
+		    } else {
+		        if( log ) alert(log);
+		    }
+
+		});
+		function readURL(input) {
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+
+		        reader.onload = function (e) {
+		            $('#img-upload').attr('src', e.target.result);
+		        }
+
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$("#imgInp").change(function(){
+		    readURL(this);
+		});
+	});
+
 </script>
 </body>
 </html>

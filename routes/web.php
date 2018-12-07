@@ -30,7 +30,7 @@ Route::get('addmembers','MemberController@addmembers');
 
 Route::get('profile','ProfileController@profile');
 
-Route::get('postarticle','ProfileController@postarticle');
+Route::get('postarticle','PostController@postarticle');
 
 Route::get('editprofile','ProfileController@editprofile');
 
@@ -48,6 +48,14 @@ Route::get('changejobtocaptain/{id}', 'MemberController@changejobtocaptain');
 Route::get('changejobtovolunteer/{id}', 'MemberController@changejobtovolunteer');
 Route::get('changejobtostaff/{id}', 'MemberController@changejobtostaff');
 
+Route::get('deleteprofile/{id}', 'MemberController@deleteprofile');
+
+
+Route::get('viewprofile/{ids}', 'ProfileController@viewprofile');
+
+
+
+
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
@@ -59,3 +67,5 @@ Route::post('/updatepassword', 'ProfileController@updatepassword');
 Route::post('/updateProfilepicture', 'ProfileController@updateProfilepicture');
 
 Route::post('/searchmember', 'MemberController@searchmember');
+
+Route::post('/addPost', 'PostController@addPost');

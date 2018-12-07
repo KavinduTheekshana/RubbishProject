@@ -404,6 +404,18 @@
       <h1>
         Edit Profile
       </h1>
+      <br>
+      @if (count($errors) > 0)
+        <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+          color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+        <strong>Whoops!</strong> There were some problems with your input.<br>
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Profile</a></li>
@@ -421,17 +433,7 @@
             </div>
             <form role="form" action="{{action('ProfileController@updateProfile')}}" method="POST" enctype="multipart/form-data">
               @csrf
-              @if (count($errors) > 0)
-                <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
-                  color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
-                <strong>Whoops!</strong> There were some problems with your input.<br>
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                    @endforeach
-                  </ul>
-                </div>
-              @endif
+
 
               @if (session('status'))
                 <div class="alert alert-success">
@@ -538,20 +540,6 @@
           </div>
           <form role="form" action="{{action('ProfileController@updatepassword')}}" method="POST" enctype="multipart/form-data">
             @csrf
-
-            @if (count($errors) > 0)
-              <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
-                color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
-              <strong>Whoops!</strong> There were some problems with your input.<br>
-                <ul>
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              </div>
-            @endif
-
-
             @if (session('status2'))
               <div class="alert alert-success">
                 {{ session('status2') }}
@@ -585,17 +573,7 @@
         </div>
         <form role="form" action="{{action('ProfileController@updateProfilepicture')}}" method="POST" enctype="multipart/form-data">
           @csrf
-          @if (count($errors) > 0)
-            <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
-              color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
-            <strong>Whoops!</strong> There were some problems with your input.<br>
-              <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-          @endif
+
 
           @if (session('status3'))
             <div class="alert alert-success">

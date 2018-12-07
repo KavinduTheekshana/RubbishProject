@@ -11,6 +11,7 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use App\post;
 
 
 class ProfileController extends Controller
@@ -21,7 +22,9 @@ class ProfileController extends Controller
     public function profile(){
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
-      return view('admin.pages.profile',['profile'=>$profile]);
+
+      $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['user_id'=>$id])->paginate(2);
+      return view('admin.pages.profile',['profile'=>$profile,'post'=>$post]);
     }
 
 
@@ -156,9 +159,19 @@ class ProfileController extends Controller
     }
 
 
-    public function postarticle(){
+
+    public function viewprofile($ids){
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
-      return view('admin.pages.postarticle',['profile'=>$profile]);
+      $user = DB::table('users')->where(['id'=>$ids])->first();
+      return view('admin.pages.membersprofile',['profile'=>$profile,'user'=>$user]);
+      // return view('admin.pages.membersprofile');
+      // return view('admin.pages.membersprofile',['profile'=>$profile]);
     }
+
+
+
+
+
+
 }

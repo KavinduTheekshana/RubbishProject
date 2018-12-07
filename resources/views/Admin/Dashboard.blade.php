@@ -519,7 +519,23 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>Pending to Clean</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-clock"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="fa  fa-hourglass-start"></i></span>
 
@@ -527,12 +543,28 @@
               <span class="info-box-text">Pending to Clean</span>
               <span class="info-box-number">90<small>%</small></span>
             </div>
-            <!-- /.info-box-content -->
           </div>
-          <!-- /.info-box -->
-        </div>
+        </div> -->
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Pending to Approve</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-checkmark-round"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-red"><i class="fa fa-clock-o"></i></span>
 
@@ -540,16 +572,31 @@
               <span class="info-box-text">PENDING TO Approve</span>
               <span class="info-box-number">41,410</span>
             </div>
-            <!-- /.info-box-content -->
           </div>
-          <!-- /.info-box -->
-        </div>
+        </div> -->
         <!-- /.col -->
 
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>Total Clean Points</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-trash-a"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
 
@@ -557,12 +604,28 @@
               <span class="info-box-text">Total Clean Points</span>
               <span class="info-box-number">760</span>
             </div>
-            <!-- /.info-box-content -->
           </div>
-          <!-- /.info-box -->
-        </div>
+        </div> -->
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{$users}}</h3>
+
+              <p>Total Members</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-stalker"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
@@ -570,10 +633,8 @@
               <span class="info-box-text">Members</span>
               <span class="info-box-number">{{$users}}</span>
             </div>
-            <!-- /.info-box-content -->
           </div>
-          <!-- /.info-box -->
-        </div>
+        </div> -->
         <!-- /.col -->
       </div>
       <!-- /.row -->

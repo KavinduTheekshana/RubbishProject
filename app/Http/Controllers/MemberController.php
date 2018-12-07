@@ -42,7 +42,16 @@ class MemberController extends Controller
     $task->save();
     return redirect()->back();
   }
+  public function searchmember($id){
 
+  }
+
+
+  public function deleteprofile($id){
+    DB::table('users')->where('id', $id)->delete();
+    return redirect()->back();
+
+  }
 
 
 
