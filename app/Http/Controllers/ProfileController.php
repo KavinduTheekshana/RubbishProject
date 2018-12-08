@@ -20,11 +20,14 @@ class ProfileController extends Controller
 
 
     public function profile(){
+
       $id =Auth::user()->id;
+      $name =Auth::user()->name;
+      $title=$name;
       $profile = DB::table('users')->where(['id'=>$id])->first();
 
-      $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['user_id'=>$id])->paginate(2);
-      return view('admin.pages.profile',['profile'=>$profile,'post'=>$post]);
+      $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['user_id'=>$id])->orderBy('posts.id', 'desc')->paginate(4);
+      return view('admin.pages.profile',['profile'=>$profile,'post'=>$post,'title'=>$title]);
     }
 
 
@@ -69,9 +72,10 @@ class ProfileController extends Controller
 
 
     public function editprofile(){
+      $title='Edit Profile';
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
-      return view('admin.pages.editprofile',['profile'=>$profile]);
+      return view('admin.pages.editprofile',['profile'=>$profile,'title'=>$title]);
     }
 
 
@@ -161,12 +165,12 @@ class ProfileController extends Controller
 
 
     public function viewprofile($ids){
+
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
       $user = DB::table('users')->where(['id'=>$ids])->first();
-      return view('admin.pages.membersprofile',['profile'=>$profile,'user'=>$user]);
-      // return view('admin.pages.membersprofile');
-      // return view('admin.pages.membersprofile',['profile'=>$profile]);
+      $title=$user->name;
+      return view('admin.pages.membersprofile',['profile'=>$profile,'user'=>$user,'title'=>$title]);
     }
 
 

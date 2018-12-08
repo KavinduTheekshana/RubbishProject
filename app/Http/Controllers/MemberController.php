@@ -10,16 +10,20 @@ use Auth;
 class MemberController extends Controller
 {
   public function index(){
+    $title='Members';
      $members=users::paginate(10);
      $id =Auth::user()->id;
      $profile = DB::table('users')->where(['id'=>$id])->first();
-     return view('admin.pages.members',['members'=>$members,'profile'=>$profile]);
+     return view('admin.pages.members',['members'=>$members,'profile'=>$profile,'title'=>$title]);
   }
 
   public function addmembers(){
+    $title='Add Member';
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.addmember',['profile'=>$profile]);
+
+    $members = DB::table('users')->orderBy('id', 'desc')->paginate(16);
+    return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,'title'=>$title]);
   }
 
 
@@ -42,9 +46,21 @@ class MemberController extends Controller
     $task->save();
     return redirect()->back();
   }
-  public function searchmember($id){
 
+
+  public function hald($id){
+    $task=users::find($id);
+    $task->action='blocked';
+    $task->save();
+    return redirect()->back();
   }
+  public function unblock($id){
+    $task=users::find($id);
+    $task->action='unblocked';
+    $task->save();
+    return redirect()->back();
+  }
+
 
 
   public function deleteprofile($id){

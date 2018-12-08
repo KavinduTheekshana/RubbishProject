@@ -1,5 +1,7 @@
 <?php
 
+
+use App\citie;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +21,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Route::get('/register', function () {
-    return view('auth.register');
+    $city=DB::table('cities')->first();
+    return view('auth.register',['city'=>$city]);
 });
 
 Auth::routes();
@@ -30,11 +33,17 @@ Route::get('addmembers','MemberController@addmembers');
 
 Route::get('profile','ProfileController@profile');
 
+Route::get('addcities','CityController@addcities');
+
 Route::get('postarticle','PostController@postarticle');
 
 Route::get('editprofile','ProfileController@editprofile');
 
-Route::get('/dash', 'allController@dash');
+Route::get('compose','MailController@compose');
+
+Route::get('sent','MailController@sent');
+
+Route::get('/dashboard', 'allController@dash');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -47,6 +56,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('changejobtocaptain/{id}', 'MemberController@changejobtocaptain');
 Route::get('changejobtovolunteer/{id}', 'MemberController@changejobtovolunteer');
 Route::get('changejobtostaff/{id}', 'MemberController@changejobtostaff');
+
+Route::get('hald/{id}', 'MemberController@hald');
+Route::get('unblock/{id}', 'MemberController@unblock');
 
 Route::get('deleteprofile/{id}', 'MemberController@deleteprofile');
 
@@ -69,3 +81,7 @@ Route::post('/updateProfilepicture', 'ProfileController@updateProfilepicture');
 Route::post('/searchmember', 'MemberController@searchmember');
 
 Route::post('/addPost', 'PostController@addPost');
+
+Route::post('/addcity', 'CityController@addcity');
+
+Route::post('/sendmail', 'MailController@sendmail');

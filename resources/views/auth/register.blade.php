@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='Admin/bower_components/font-awesome/css/font-awesome.min.css'>
 
     <link rel="stylesheet" href="Auth/css/style.css">
     <link rel="stylesheet" type="text/css" href="Auth/css/util.css">

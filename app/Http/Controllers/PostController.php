@@ -18,9 +18,10 @@ class PostController extends Controller
 
 
   public function postarticle(){
-  $id =Auth::user()->id;
-  $profile = DB::table('users')->where(['id'=>$id])->first();
-  return view('admin.pages.postarticle',['profile'=>$profile]);
+    $title='Post Article';
+    $id =Auth::user()->id;
+    $profile = DB::table('users')->where(['id'=>$id])->first();
+  return view('admin.pages.postarticle',['profile'=>$profile,'title'=>$title]);
   }
 
 
