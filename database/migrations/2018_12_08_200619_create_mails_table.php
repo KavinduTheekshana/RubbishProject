@@ -15,11 +15,12 @@ class CreateMailsTable extends Migration
     {
         Schema::create('mails', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('publisher_id');
             $table->string('to');
             $table->string('subject');
             $table->string('body');
-            $table->string('attachment');
-            $table->string('action');
+            $table->string('attachment')->nullable();
+            $table->string('ststus');
             $table->timestamps();
         });
     }

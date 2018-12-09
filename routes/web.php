@@ -41,7 +41,13 @@ Route::get('editprofile','ProfileController@editprofile');
 
 Route::get('compose','MailController@compose');
 
-Route::get('sent','MailController@sent');
+Route::get('sentbox','MailController@sentbox');
+
+Route::get('inbox','MailController@inbox');
+
+Route::get('draft','MailController@draft');
+
+Route::get('trash','MailController@trash');
 
 Route::get('/dashboard', 'allController@dash');
 
@@ -62,11 +68,7 @@ Route::get('unblock/{id}', 'MemberController@unblock');
 
 Route::get('deleteprofile/{id}', 'MemberController@deleteprofile');
 
-
 Route::get('viewprofile/{ids}', 'ProfileController@viewprofile');
-
-
-
 
 Route::post('/addCategory', 'categoryController@addcategory');
 
@@ -85,3 +87,7 @@ Route::post('/addPost', 'PostController@addPost');
 Route::post('/addcity', 'CityController@addcity');
 
 Route::post('/sendmail', 'MailController@sendmail');
+
+Route::post('/adddraft', 'MailController@adddraft');
+
+Route::get('readmail/{postid}', 'MailController@readmail');

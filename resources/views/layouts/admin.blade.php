@@ -422,9 +422,11 @@ width: 50%;
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="examples/invoice.html"><i class="fa fa-inbox"></i> Inbox</a></li>
+            <li><a href="{{url('inbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
             <li><a href="{{url('compose')}}"><i class="fa fa-envelope-o"></i> Compose</a></li>
-            <li><a href="{{url('sentmail')}}"><i class="fa fa-mail-forward"></i> Sent</a></li>
+            <li><a href="{{url('sentbox')}}"><i class="fa fa-mail-forward"></i> Sent</a></li>
+            <li><a href="{{url('draft')}}"><i class="fa fa-file-text-o"></i> Draft</a></li>
+            <li><a href="{{url('trash')}}"><i class="fa fa-trash-o"></i> Trash</a></li>
           </ul>
         </li>
 
