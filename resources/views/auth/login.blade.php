@@ -66,7 +66,7 @@
           </span>
 
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-                        <input class="input100" type="email" name="email">
+                        <input class="input100" type="email" name="email" required>
 
 						<span class="focus-input100"></span>
 					</div>
@@ -78,13 +78,12 @@
 						<span class="btn-show-pass">
 							<i class="fa fa-eye"></i>
 						</span>
-						<input class="input100" type="password" name="password" >
+						<input class="input100" type="password" name="password" required >
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="flex-sb-m w-full p-b-48">
+					<div class="flex-sb-m w-full">
 						<div class="contact100-form-checkbox">
-							{{--  <a href="{{ route('register') }}" class="txt3" >  --}}
                             <a href="{{url('/register')}}" class="txt3" >
                                 Register As Volunteer
 							</a>
@@ -96,6 +95,23 @@
 							</a>
 						</div>
 					</div>
+
+
+
+
+					<div class="flex-sb-m w-full p-b-28">
+						<div class="m-l-20">
+							<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+							<label class="txt3" for="remember">
+								Remember Me
+							</label>
+						</div>
+
+
+					</div>
+
+
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

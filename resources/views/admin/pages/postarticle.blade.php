@@ -42,7 +42,17 @@
 
                 <h5>Title</h5>
                   <input type="text" class="form-control" name="post_title"></input>
-                  <br>
+                  <div class="form-group">
+                    <h5>Category</h5>
+                    <select name="category" class="form-control select2" style="width: 30%;">
+                      <option value="Recycling" selected="selected">Recycling</option>
+                      <option value="Home Waste">Home Waste</option>
+                      <option value="Industrial Waste">Industrial Waste</option>
+                      <option value="Plastic Recycling">Plastic Recycling</option>
+                      <option value="Recyling Technology">Recyling Technology</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
                     <div class="form-group">
                       <h5>Upload Image</h5>
                       <div class="input-group">

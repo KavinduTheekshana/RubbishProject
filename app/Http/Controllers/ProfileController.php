@@ -26,7 +26,7 @@ class ProfileController extends Controller
       $title=$name;
       $profile = DB::table('users')->where(['id'=>$id])->first();
 
-      $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['user_id'=>$id])->orderBy('posts.id', 'desc')->paginate(4);
+      $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['user_id'=>$id])->orderBy('posts.postid', 'desc')->paginate(4);
       return view('admin.pages.profile',['profile'=>$profile,'post'=>$post,'title'=>$title]);
     }
 
@@ -69,14 +69,6 @@ class ProfileController extends Controller
     }
 
 
-
-
-    public function editprofile(){
-      $title='Edit Profile';
-      $id =Auth::user()->id;
-      $profile = DB::table('users')->where(['id'=>$id])->first();
-      return view('admin.pages.editprofile',['profile'=>$profile,'title'=>$title]);
-    }
 
 
 

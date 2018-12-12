@@ -24,6 +24,8 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="Admin/plugins/iCheck/flat/blue.css">
 
+  <link rel="stylesheet" href="crop/croppie.css" />
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -430,6 +432,21 @@ width: 50%;
           </ul>
         </li>
 
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-map-marker"></i> <span>Drop Locations</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('droplocation')}}"><i class="fa fa-plus"></i> Add Drop Location</a></li>
+            <li><a href="{{url('compose')}}"><i class="fa fa-list-ul"></i> List </a></li>
+          </ul>
+        </li>
+
+
+
 
       </ul>
     </section>
@@ -483,6 +500,8 @@ width: 50%;
 <script src="Admin/bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<script src="crop/croppie.js"></script>
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -584,6 +603,56 @@ $(document).ready( function() {
       }
     });
   });
+</script>
+
+<script>
+$(document).ready(function(){
+
+  $image_crop = $('#image_demo').croppie({
+    enableExif: true,
+    viewport: {
+      width:200,
+      height:200,
+      type:'square' //circle
+    },
+    boundary:{
+      width:300,
+      height:300
+    }
+  });
+
+  $('#profile_pic').on('change', function(){
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      $image_crop.croppie('bind', {
+        url: event.target.result
+      }).then(function(){
+        console.log('jQuery bind complete');
+      });
+    }
+    reader.readAsDataURL(this.files[0]);
+    $('#uploadimageModal').modal('show');
+  });
+
+  $('.crop_image').click(function(event){
+    $image_crop.croppie('result', {
+      type: 'canvas',
+      size: 'viewport'
+    }).then(function(response){
+      $.ajax({
+        url:"upload.php",
+        type: "POST",
+        data:{"image": response},
+        success:function(data)
+        {
+          $('#uploadimageModal').modal('hide');
+          $('#profile_pic').html(data);
+        }
+      });
+    })
+  });
+
+});
 </script>
 </body>
 </html>

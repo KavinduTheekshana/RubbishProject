@@ -17,9 +17,12 @@ use App\citie;
 //     return view('auth.register');
 // });
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
+
+Route::get('/', 'BlogController@index');
+
 Route::get('/register', function () {
     $city=DB::table('cities')->first();
     return view('auth.register',['city'=>$city]);
@@ -49,6 +52,8 @@ Route::get('draft','MailController@draft');
 
 Route::get('trash','MailController@trash');
 
+Route::get('droplocation','LocationController@droplocation');
+
 Route::get('/dashboard', 'allController@dash');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -70,6 +75,11 @@ Route::get('deleteprofile/{id}', 'MemberController@deleteprofile');
 
 Route::get('viewprofile/{ids}', 'ProfileController@viewprofile');
 
+Route::get('readmail/{postid}', 'MailController@readmail');
+
+Route::get('viewpost/{ids}', 'BlogController@viewpost');
+Route::get('deletepost/{ids}', 'BlogController@deletepost');
+
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
@@ -89,5 +99,3 @@ Route::post('/addcity', 'CityController@addcity');
 Route::post('/sendmail', 'MailController@sendmail');
 
 Route::post('/adddraft', 'MailController@adddraft');
-
-Route::get('readmail/{postid}', 'MailController@readmail');

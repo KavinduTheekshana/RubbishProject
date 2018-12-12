@@ -16,8 +16,8 @@ class allController extends Controller
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(8);
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.Dashboard',['users'=>$data,'members'=>$members,'profile'=>$profile,'title'=>$title]);
-    // return view('admin.Dashboard',['users'=>$data,'members'=>$members]);
+    $post =DB::table('posts')->orderBy('postid', 'desc')->paginate(4);
+    return view('admin.Dashboard',['users'=>$data,'members'=>$members,'profile'=>$profile,'title'=>$title,'post'=>$post]);
 
   }
 }

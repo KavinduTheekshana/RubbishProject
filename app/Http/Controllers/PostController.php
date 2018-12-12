@@ -30,6 +30,7 @@ class PostController extends Controller
       $this->validate($request, [
         'post_title' => ['required', 'max:255'],
         'post_image'=>['required'],
+        'category'=>['required'],
         'post_body'=>['required'],
        ]);
 
@@ -37,6 +38,7 @@ class PostController extends Controller
        $posts = new post();
        $posts->user_id = $id;
        $posts->post_title = $request->input('post_title');
+       $posts->category = $request->input('category');
             if(Input::hasFile('post_image')){
                 $file=Input::file('post_image');
                 $file->move(public_path().'/uploads/posts',
@@ -46,7 +48,33 @@ class PostController extends Controller
             }
             $posts->post_body = $request->input('post_body');
        $posts->save();
-       return redirect('profile')->with('status', 'Profile Added Sucessfully');
+       return redirect('profile')->with('status', 'Post Added Sucessfully');
+
+    }
+
+    public function updatepost(Request $request,$post_id){
+      $this->validate($request, [
+        'post_title' => ['required', 'max:255'],
+        'post_image'=>['required'],
+        'category'=>['required'],
+        'post_body'=>['required'],
+       ]);
+
+       $id =Auth::user()->id;
+       $posts = new post();
+       $posts->user_id = $id;
+       $posts->post_title = $request->input('post_title');
+       $posts->category = $request->input('category');
+            if(Input::hasFile('post_image')){
+                $file=Input::file('post_image');
+                $file->move(public_path().'/uploads/posts',
+                $file->getClientOriginalName());
+                $url=URL::to("/").'/uploads/posts/'.$file->getClientOriginalName();
+                $posts->post_image = $url;
+            }
+            $posts->post_body = $request->input('post_body');
+       $posts->update->where('postid',$post_id);
+       return redirect('profile')->with('status', 'Post Added Sucessfully');
 
     }
 }

@@ -55,26 +55,36 @@
 
         <div class="col-md-9">
 
-          @foreach ($post as $posts)
-          <div>
+@foreach ($post as $posts)
+          <div class="col-md-6" style="flort:left;">
 
-
-          <div class="col-md-6">
             <div class="box box-widget">
               <div class="box-header with-border">
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  <button type="button" data-toggle="dropdown" class="btn btn-box-tool dropdown"><i class="fa fa-bars"></i></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="viewpost/{{$posts->postid}}">View</a></li>
+                    <li><a href="deletepost/{{$posts->postid}}">Delete</a></li>
+                  </ul>
+                </div>
                 <div class="user-block">
                   <img class="img-circle" src="{{$posts->profile_pic}}" alt="User Image">
                   <span class="username"><a href="#">{{$posts->name}}</a></span>
-                  <span class="description">Shared publicly - {{$posts->publish_date}}</span>
+                  <span class="description">Shared publicly : {{ date('D-M-Y', strtotime($posts->publish_date)) }}</span>
                 </div>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <img class="img-responsive pad" src="{{$posts->post_image}}" alt="Photo">
 
-                <p>{!! substr(strip_tags($posts->post_body), 0, 200) !!}
-                  @if (strlen(strip_tags($posts->post_body)) > 50)
-                       ... <a href="" class="btn btn-info btn-sm">Read More</a>
+                <img class="img-responsive pad" src="{{$posts->post_image}}"  style="height:300px;overflow: hidden;"alt="Photo">
+                <a href="viewpost/{{$posts->postid}}"><h4>{!! substr(strip_tags($posts->post_title), 0, 40) !!}
+                  @if (strlen(strip_tags($posts->post_title)) > 40)</a>
+                       ...
+                     @endif</h4>
+                <p>{!! substr(strip_tags($posts->post_body), 0, 180) !!}
+                  @if (strlen(strip_tags($posts->post_body)) > 180)
+                       ... <a href="viewpost/{{$posts->postid}}" class="btn btn-info btn-sm">Read More</a>
                      @endif  </p>
                 <!-- <p>{!! $posts->post_body !!}</p> -->
                 <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
@@ -95,12 +105,12 @@
               </div>
               <!-- /.box-footer -->
             </div>
-            <!-- /.box -->
-          </div>
-
 
           </div>
           @endforeach
+
+
+
           <div class="col-md-12">
             <div class=" clearfix">
               <ul class="pagination pagination-sm no-margin pull-left">
@@ -108,6 +118,7 @@
               </ul>
             </div>
           </div>
+
 
 
         </div>
