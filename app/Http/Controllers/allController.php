@@ -17,7 +17,12 @@ class allController extends Controller
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
     $post =DB::table('posts')->orderBy('postid', 'desc')->paginate(4);
-    return view('admin.Dashboard',['users'=>$data,'members'=>$members,'profile'=>$profile,'title'=>$title,'post'=>$post]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.Dashboard',['users'=>$data,'members'=>$members,
+    'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message]);
 
   }
 }

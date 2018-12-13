@@ -109,7 +109,7 @@
 
                 <div class="form-group">
                   <label>Job Type</label>
-                  
+
 
                   <div class="radio">
                     <label>

@@ -18,9 +18,10 @@ class BlogController extends Controller
 
 
   public function index(){
+    $title='Colombo Municipal Council Smart Cleaning Service';
     $posts =DB::table('posts')->orderBy('posts.postid', 'desc')->paginate(4);
     $slider =DB::table('posts')->orderBy('posts.postid', 'desc')->get();
-    return view('blog.index',['posts'=>$posts,'slider'=>$slider]);
+    return view('blog.index',['posts'=>$posts,'slider'=>$slider,'title'=>$title]);
   }
 
   public function viewpost($post_id){

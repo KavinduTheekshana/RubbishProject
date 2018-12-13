@@ -12,6 +12,24 @@
       </ol>
     </section>
 
+    @if (count($errors) > 0)
+      <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+        color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+      <strong>Whoops!</strong> There were some problems with your input.<br>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
+    @if (session('status'))
+      <div class="alert alert-success">
+        {{ session('status') }}
+      </div>
+    @endif
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -86,7 +104,7 @@
                   <tr>
                     <td><input type="checkbox"></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                    <td class="mailbox-name"><a href="read-mail.html">{{$mail->to}}</a></td>
+                    <td class="mailbox-name"><a href="readmail/{{$mail->mail_id}}">{{$mail->to}}</a></td>
                     <td class="mailbox-subject"><b>{{ substr(strip_tags($mail->subject), 0, 40) }}
                     @if (strlen(strip_tags($mail->subject)) > 40)...@endif</b> -
                       {!! substr(strip_tags($mail->body), 0, 30) !!}

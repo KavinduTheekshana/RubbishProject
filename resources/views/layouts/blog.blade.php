@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="blog/img/favicon.png" type="image/png">
-        <title>Fantom Blog</title>
+        <title>CMCSCS | {{$title}}</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="blog/css/bootstrap.css">
         <link rel="stylesheet" href="blog/vendors/linericon/style.css">
@@ -51,9 +51,11 @@
 										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 									</ul>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{{url('contact')}}">Contact</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right ml-auto">
+                <li class="nav-item"><a class="navbar-right nav-link" href="{{url('/login')}}">login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/register')}}">Signup</a></li>
 							</ul>
 						</div>
 					</div>
@@ -71,7 +73,9 @@
                     <div class="col-lg-3  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
                             <h6 class="footer_title">About Us</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            <p>Colombo Municipal Council is planning to launch a web site to optimize garbage collection and
+                              they provide some spots to the people and people can check that spots via the web
+                              site and they can keep their garbages in there.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -79,10 +83,10 @@
                             <h6 class="footer_title">Newsletter</h6>
                             <p>Stay updated with our latest trends</p>
                             <div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                <form target="_blank" action="" method="get" class="subscribe_form relative">
                                     <div class="input-group d-flex flex-row">
                                         <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+                                        <button type="submit" class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
                                     </div>
                                     <div class="mt-10 info"></div>
                                 </form>
@@ -91,7 +95,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-footer-widget instafeed">
-                            <h6 class="footer_title">Instagram Feed</h6>
+                            <h6 class="footer_title">Popular Posts</h6>
                             <ul class="list instafeed d-flex flex-wrap">
                                 <li><img src="img/instagram/Image-01.jpg" alt=""></li>
                                 <li><img src="img/instagram/Image-02.jpg" alt=""></li>
@@ -110,16 +114,16 @@
                             <p>Let us be social</p>
                             <div class="f_social">
                               <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
+                              <a href="#"><i class="fa fa-twitter"></i></a>
+                              <a href="#"><i class="fa fa-linkedin"></i></a>
+                              <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row footer-bottom d-flex justify-content-between align-items-center">
                     <p class="col-lg-12 footer-text text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy; 2018-2019 <a href="www.cmcscs.lk">CMCSCS</a> All rights reserved
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
@@ -144,5 +148,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="blog/js/jquery.ajaxchimp.min.js"></script>
         <script src="blog/js/mail-script.js"></script>
         <script src="blog/js/theme.js"></script>
+
+      
+
     </body>
 </html>

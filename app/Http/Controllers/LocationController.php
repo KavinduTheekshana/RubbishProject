@@ -16,7 +16,12 @@ class LocationController extends Controller
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(8);
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.droplocation',['users'=>$data,'members'=>$members,'profile'=>$profile,'title'=>$title]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.droplocation',['users'=>$data,'members'=>$members,'profile'=>$profile,
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
 
   }
 }

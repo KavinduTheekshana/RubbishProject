@@ -21,7 +21,12 @@ class PostController extends Controller
     $title='Post Article';
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-  return view('admin.pages.postarticle',['profile'=>$profile,'title'=>$title]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+  return view('admin.pages.postarticle',['profile'=>$profile,'title'=>$title,
+  'messagecount'=>$messagecount,'message'=>$message]);
   }
 
 

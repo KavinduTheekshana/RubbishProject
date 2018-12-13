@@ -22,7 +22,12 @@ class CityController extends Controller
     $profile = DB::table('users')->where(['id'=>$id])->first();
     $city=DB::table('cities')->get();
     $citycount=DB::table('cities')->count();
-    return view('admin.pages.addcities',['profile'=>$profile,'city'=>$city,'citycount'=>$citycount,'title'=>$title]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.addcities',['profile'=>$profile,'city'=>$city,
+    'citycount'=>$citycount,'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
 

@@ -77,6 +77,8 @@ Route::get('viewprofile/{ids}', 'ProfileController@viewprofile');
 
 Route::get('readmail/{postid}', 'MailController@readmail');
 
+Route::get('contact','ContactController@contactView');
+
 Route::get('viewpost/{ids}', 'BlogController@viewpost');
 Route::get('deletepost/{ids}', 'BlogController@deletepost');
 
@@ -99,3 +101,5 @@ Route::post('/addcity', 'CityController@addcity');
 Route::post('/sendmail', 'MailController@sendmail');
 
 Route::post('/adddraft', 'MailController@adddraft');
+
+Route::post('/contactSave', 'ContactController@contactSave');

@@ -52,7 +52,7 @@
               <div class="mailbox-read-info">
                 <h3>{{$mails->subject}}</h3>
                 <h5>From: {{$mails->email}}
-                  <span class="mailbox-read-time pull-right">{{$mails->date}}</span></h5>
+                  <span class="mailbox-read-time pull-right">{{ date('D-M-Y | H:i:s', strtotime($mails->date)) }}</span></h5>
               </div>
               <!-- /.mailbox-read-info -->
               <div class="mailbox-controls with-border text-center">
@@ -78,22 +78,17 @@
               <!-- /.mailbox-read-message -->
             </div>
             <!-- /.box-body -->
+            @if(count($mails->attachment)>0)
             <div class="box-footer">
               <ul class="mailbox-attachments clearfix">
 
                 <li>
                   <span class="mailbox-attachment-icon has-img"><img src="{{$mails->attachment}}" ></span>
 
-                  <div class="mailbox-attachment-info">
-                    <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo1.png</a>
-                        <span class="mailbox-attachment-size">
-                          2.67 MB
-                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                        </span>
-                  </div>
                 </li>
               </ul>
             </div>
+            @endif
             <!-- /.box-footer -->
             <div class="box-footer">
               <div class="pull-right">

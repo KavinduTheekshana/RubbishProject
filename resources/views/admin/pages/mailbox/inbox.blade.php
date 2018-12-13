@@ -87,7 +87,7 @@
                   <tr>
                     <td><input type="checkbox"></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                    <td class="mailbox-name"><a href="readmail/{{$mail->id}}">{{$mail->to}}</a></td>
+                    <td class="mailbox-name"><a href="readmail/{{$mail->mail_id}}">{{$mail->to}}</a></td>
                     <td class="mailbox-subject"><b>{{ substr(strip_tags($mail->subject), 0, 40) }}
                     @if (strlen(strip_tags($mail->subject)) > 40)...@endif</b> -
                       {!! substr(strip_tags($mail->body), 0, 30) !!}

@@ -21,7 +21,12 @@ class MailController extends Controller
     $title='Compose Mail';
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.Compose',['profile'=>$profile,'title'=>$title]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.mailbox.Compose',['profile'=>$profile,
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function sentbox(){
@@ -29,15 +34,26 @@ class MailController extends Controller
     $id =Auth::user()->id;
     $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['publisher_id'=>$id])->paginate(10);
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.sentmail',['profile'=>$profile,'title'=>$title,'mails'=>$mails]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.mailbox.sentmail',['profile'=>$profile,
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function inbox(){
     $title='Inbox';
     $id =Auth::user()->id;
-    $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['publisher_id'=>$id])->paginate(10);
+    $email = Auth::user()->email;
+    $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['to'=>$email])->orderBy('mails.mail_id','desc')->paginate(10);
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.inbox',['profile'=>$profile,'title'=>$title,'mails'=>$mails]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.mailbox.inbox',['profile'=>$profile,
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function draft(){
@@ -45,7 +61,12 @@ class MailController extends Controller
     $id =Auth::user()->id;
     $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['publisher_id'=>$id])->paginate(10);
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.draft',['profile'=>$profile,'title'=>$title,'mails'=>$mails]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.mailbox.draft',['profile'=>$profile,
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function trash(){
@@ -53,13 +74,18 @@ class MailController extends Controller
     $id =Auth::user()->id;
     $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['publisher_id'=>$id])->paginate(10);
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.trash',['profile'=>$profile,'title'=>$title,'mails'=>$mails]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.mailbox.trash',['profile'=>$profile,
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function sendmail(Request $request){
     $this->validate($request, [
       'to'=>['required'],
-      'subject'=>['required'],
+      'subject'=>['required','max:100'],
       'body'=>['required'],
      ]);
 
@@ -111,9 +137,10 @@ class MailController extends Controller
   public function readmail($postid){
     $title='Read Mail';
     $id =Auth::user()->id;
-    $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['publisher_id'=>$id])->first();
+    $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['mails.mail_id'=>$postid])->first();
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    return view('admin.pages.readmail',['profile'=>$profile,'title'=>$title,'mails'=>$mails]);
+    return view('admin.pages.mailbox.readmail',['profile'=>$profile,
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
 

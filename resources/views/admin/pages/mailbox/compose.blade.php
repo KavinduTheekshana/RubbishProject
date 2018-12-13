@@ -12,6 +12,25 @@
       </ol>
     </section>
 
+    @if (count($errors) > 0)
+      <div style="padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;
+        color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;">
+      <strong>Whoops!</strong> There were some problems with your input.<br>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
+    @if (session('status'))
+      <div class="alert alert-success">
+        {{ session('status') }}
+      </div>
+    @endif
+
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -53,7 +72,7 @@
             <div class="box-body">
 
               <div class="form-group">
-                <input class="form-control" name="to" placeholder="To:">
+                <input class="form-control" type="email" name="to" placeholder="To:">
               </div>
               <div class="form-group">
                 <input class="form-control" name="subject" placeholder="Subject:">

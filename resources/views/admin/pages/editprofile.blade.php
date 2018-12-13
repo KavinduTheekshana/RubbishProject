@@ -57,13 +57,13 @@
                   <label >Date of Birth</label>
                   <div class="row">
                   <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="DD" name="date">
+                    <input type="text" class="form-control" value="{{ date('d', strtotime($profile->birthday)) }}" placeholder="DD" name="date">
                   </div>
                   <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="MM" name="month">
+                    <input type="text" class="form-control" value="{{ date('m', strtotime($profile->birthday)) }}" placeholder="MM" name="month">
                   </div>
                   <div class="col-xs-3">
-                    <input type="text" class="form-control" placeholder="YYYY" name="year">
+                    <input type="text" class="form-control" value="{{ date('Y', strtotime($profile->birthday)) }}" placeholder="YYYY" name="year">
                   </div>
                 </div>
                 </div>

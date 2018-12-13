@@ -100,7 +100,7 @@
         </div>
 
         <div>
-            <a href="{{url('/')}}" class="txt3">
+            <a href="{{url('/login')}}" class="txt3">
                 Go to Sign In Window
             </a>
         </div>

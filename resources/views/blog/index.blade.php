@@ -23,7 +23,7 @@
                      ...
                    @endif</p>
 							<div class="date">
-								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
+								<a ><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('D-M-Y', strtotime($slider->publish_date)) }}</a>
 								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
 							</div>
 						</div>
@@ -52,12 +52,12 @@
 									<div class="blog_text_inner">
 										<a class="cat" href="#">{{$post->category}}</a>
 										<a href="viewpost/{{$post->postid}}"><h4>{{$post->post_title}}</h4></a>
-										<p>{!! substr(strip_tags($slider->post_body), 0, 200) !!}
-                      @if (strlen(strip_tags($slider->post_body)) > 200)
+										<p>{!! substr(strip_tags($post->post_body), 0, 200) !!}
+                      @if (strlen(strip_tags($post->post_body)) > 200)
                            ...
                          @endif</p>
 										<div class="date">
-											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
+											<a><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('D-M-Y', strtotime($post->publish_date)) }}</a>
 											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
 										</div>
 									</div>
@@ -85,16 +85,21 @@
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget author_widget">
-                                <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
-                                <h4>Charlie Barber</h4>
-                                <p>Senior blog writer</p>
+                                <img class="author_img rounded-circle" src="blog\img\profile.jpg" style="width:100px;height:100px;" alt="">
+                                <h4>About Us</h4>
+                                <p>Colombo Municipal Council Smart <br>  Cleaning Service</p>
                                 <div class="social_icon">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
                                 </div>
-                                <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                                <p>Colombo Municipal Council is planning to launch a web site to optimize garbage collection and
+                                  they provide some spots to the people and people can check that spots via the web
+                                  site and they can keep their garbages in there. The CMC post articles
+                                  related to the garbage problems and every people can see that post via
+                                  the web site. CMC allow people to join with them as volunteers and they
+                                  can report about thrown away garbage to the CMC and CMC collect them.</p>
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
@@ -138,44 +143,38 @@
                                 <ul class="list cat-list">
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Technology</p>
+                                            <p>Recycling</p>
                                             <p>37</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Lifestyle</p>
+                                            <p>Home Waste</p>
                                             <p>24</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Fashion</p>
+                                            <p>Industrial Waste</p>
                                             <p>59</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Art</p>
+                                            <p>Plastic Recycling</p>
                                             <p>29</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Food</p>
+                                            <p>Recyling Technology</p>
                                             <p>15</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex justify-content-between">
-                                            <p>Architecture</p>
+                                            <p>Other</p>
                                             <p>09</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Adventure</p>
-                                            <p>44</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -184,18 +183,13 @@
                             <aside class="single-sidebar-widget tag_cloud_widget">
                                 <h4 class="widget_title">Tag Clouds</h4>
                                 <ul class="list">
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Architecture</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Food</a></li>
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Art</a></li>
-                                    <li><a href="#">Adventure</a></li>
-                                    <li><a href="#">Food</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Adventure</a></li>
+                                    <li><a href="#">Recycling</a></li>
+                                    <li><a href="#">Plastic Recycling</a></li>
+                                    <li><a href="#">Recyling Technology</a></li>
+                                    <li><a href="#">Industrial Waste</a></li>
+                                    <li><a href="#">Other</a></li>
+                                    <li><a href="#">Home Waste</a></li>
+                                    <li><a href="#">Recyling Technology</a></li>
                                 </ul>
                             </aside>
                         </div>

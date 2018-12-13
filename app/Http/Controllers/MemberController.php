@@ -14,7 +14,12 @@ class MemberController extends Controller
      $members=users::paginate(10);
      $id =Auth::user()->id;
      $profile = DB::table('users')->where(['id'=>$id])->first();
-     return view('admin.pages.members',['members'=>$members,'profile'=>$profile,'title'=>$title]);
+
+     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+     $message=DB::table('messages')->where('read_or_not','0')->get();
+
+     return view('admin.pages.members',['members'=>$members,'profile'=>$profile,
+     'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
   public function addmembers(){
@@ -23,7 +28,12 @@ class MemberController extends Controller
     $profile = DB::table('users')->where(['id'=>$id])->first();
 
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(16);
-    return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,'title'=>$title]);
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
   }
 
 

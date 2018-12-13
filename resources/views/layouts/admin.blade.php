@@ -26,12 +26,6 @@
 
   <link rel="stylesheet" href="crop/croppie.css" />
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -100,75 +94,37 @@ width: 50%;
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <i class="fa fa-commenting-o"></i>
+              <span class="label label-warning">{{count($messagecount)}}</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+              <li class="header">You have {{count($messagecount)}} Unread messages</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
+
+                  @foreach($message as $msg)
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="Admin\dist\img\msg.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        {!! substr(strip_tags($msg->subject), 0, 25) !!}
+                          @if (strlen(strip_tags($msg->subject)) > 25)
+                               ...
+                             @endif
+                        <small><i class="fa fa-clock-o"></i> {{ date('H:i:d', strtotime($msg->created_at)) }}</small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>{!! substr(strip_tags($msg->message), 0, 40) !!}
+                        @if (strlen(strip_tags($msg->message)) > 40)
+                             ...
+                           @endif</p>
                     </a>
                   </li>
                   <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="Admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
+                  @endforeach
+
                 </ul>
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
@@ -415,12 +371,12 @@ width: 50%;
         </li>
 
 
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{url('inbox')}}">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-              <small class="label pull-right bg-yellow">12</small>
+              <small class="label pull-right bg-red">12</small>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -443,6 +399,16 @@ width: 50%;
             <li><a href="{{url('droplocation')}}"><i class="fa fa-plus"></i> Add Drop Location</a></li>
             <li><a href="{{url('compose')}}"><i class="fa fa-list-ul"></i> List </a></li>
           </ul>
+        </li>
+
+
+        <li>
+          <a href="{{url('message')}}">
+            <i class="fa fa-commenting-o"></i> <span>Messages</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-yellow">{{count($messagecount)}}</small>
+            </span>
+          </a>
         </li>
 
 
@@ -533,6 +499,7 @@ $(document).ready( function() {
 		    }
 
 		});
+
 		function readURL(input) {
 		    if (input.files && input.files[0]) {
 		        var reader = new FileReader();
