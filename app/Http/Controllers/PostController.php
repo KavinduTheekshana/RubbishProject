@@ -23,7 +23,7 @@ class PostController extends Controller
     $profile = DB::table('users')->where(['id'=>$id])->first();
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
   return view('admin.pages.postarticle',['profile'=>$profile,'title'=>$title,
   'messagecount'=>$messagecount,'message'=>$message]);

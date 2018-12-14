@@ -70,7 +70,7 @@
                 </div>
                 <div class="user-block">
                   <img class="img-circle" src="{{$posts->profile_pic}}" alt="User Image">
-                  <span class="username"><a href="#">{{$posts->name}}</a></span>
+                  <span class="username"><a>{{$posts->name}}</a></span>
                   <span class="description">Shared publicly : {{ date('D-M-Y', strtotime($posts->publish_date)) }}</span>
                 </div>
               </div>

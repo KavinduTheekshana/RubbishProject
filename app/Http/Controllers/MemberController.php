@@ -16,7 +16,7 @@ class MemberController extends Controller
      $profile = DB::table('users')->where(['id'=>$id])->first();
 
      $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-     $message=DB::table('messages')->where('read_or_not','0')->get();
+     $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
      return view('admin.pages.members',['members'=>$members,'profile'=>$profile,
      'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
@@ -30,7 +30,7 @@ class MemberController extends Controller
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(16);
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
     return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,
     'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);

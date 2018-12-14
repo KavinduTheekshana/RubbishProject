@@ -7,6 +7,7 @@
         <link rel="icon" href="blog/img/favicon.png" type="image/png">
         <title>CMCSCS | {{$title}}</title>
         <!-- Bootstrap CSS -->
+        <link rel="icon" type="image/png" href="icon/favicon.ico"/>
         <link rel="stylesheet" href="blog/css/bootstrap.css">
         <link rel="stylesheet" href="blog/vendors/linericon/style.css">
         <link rel="stylesheet" href="blog/css/font-awesome.min.css">
@@ -149,7 +150,7 @@ Copyright &copy; 2018-2019 <a href="www.cmcscs.lk">CMCSCS</a> All rights reserve
         <script src="blog/js/mail-script.js"></script>
         <script src="blog/js/theme.js"></script>
 
-      
+
 
     </body>
 </html>

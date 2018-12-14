@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CMCSCS | {{$title}}</title>
+
+  <link rel="icon" type="image/png" href="icon/favicon.ico"/>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -110,14 +112,14 @@ width: 50%;
                         <img src="Admin\dist\img\msg.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        {!! substr(strip_tags($msg->subject), 0, 25) !!}
-                          @if (strlen(strip_tags($msg->subject)) > 25)
+                        {!! substr(strip_tags($msg->subject), 0, 20) !!}
+                          @if (strlen(strip_tags($msg->subject)) > 20)
                                ...
                              @endif
                         <small><i class="fa fa-clock-o"></i> {{ date('H:i:d', strtotime($msg->created_at)) }}</small>
                       </h4>
-                      <p>{!! substr(strip_tags($msg->message), 0, 40) !!}
-                        @if (strlen(strip_tags($msg->message)) > 40)
+                      <p>{!! substr(strip_tags($msg->message), 0, 30) !!}
+                        @if (strlen(strip_tags($msg->message)) > 30)
                              ...
                            @endif</p>
                     </a>
@@ -190,7 +192,8 @@ width: 50%;
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                        role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">20% Complete</span>
                         </div>
                       </div>
@@ -204,7 +207,8 @@ width: 50%;
                         <small class="pull-right">40%</small>
                       </h3>
                       <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-green" style="width: 40%"
+                         role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">40% Complete</span>
                         </div>
                       </div>
@@ -218,7 +222,8 @@ width: 50%;
                         <small class="pull-right">60%</small>
                       </h3>
                       <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-red" style="width: 60%"
+                        role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">60% Complete</span>
                         </div>
                       </div>
@@ -232,7 +237,8 @@ width: 50%;
                         <small class="pull-right">80%</small>
                       </h3>
                       <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%"
+                         role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">80% Complete</span>
                         </div>
                       </div>
@@ -312,7 +318,8 @@ width: 50%;
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
                 </button>
               </span>
         </div>
@@ -322,7 +329,7 @@ width: 50%;
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li>
+        <li @if($title==='Dashboard') class="active" @endif>
           <a href="{{url('/dashboard')}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -330,7 +337,7 @@ width: 50%;
           </a>
         </li>
 
-        <li>
+        <li @if($title==='Members') class="active" @endif>
           <a href="{{url('members')}}">
             <i class="fa fa-users"></i> <span>Members</span>
             <span class="pull-right-container">
@@ -338,7 +345,7 @@ width: 50%;
           </a>
         </li>
 
-        <li>
+        <li @if($title==='Add Member') class="active" @endif>
           <a href="{{url('addmembers')}}">
             <i class="fa fa-user-plus"></i> <span>Add Members</span>
             <span class="pull-right-container">
@@ -346,7 +353,7 @@ width: 50%;
           </a>
         </li>
 
-        <li>
+        <li @if($title===($profile->name)) class="active" @endif>
           <a href="{{url('profile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
@@ -354,7 +361,7 @@ width: 50%;
           </a>
         </li>
 
-        <li>
+        <li @if($title==='Post Article') class="active" @endif>
           <a href="{{url('postarticle')}}">
             <i class="fa fa-newspaper-o"></i> <span>Post Article</span>
             <span class="pull-right-container">
@@ -362,7 +369,7 @@ width: 50%;
           </a>
         </li>
 
-        <li>
+        <li @if($title==='Add Cities') class="active" @endif>
           <a href="{{url('addcities')}}">
             <i class="fa fa-map"></i> <span>Add Cities</span>
             <span class="pull-right-container">
@@ -371,7 +378,8 @@ width: 50%;
         </li>
 
 
-        <li>
+        <li @if($title==='Inbox'||$title==='Compose Mail'||$title==='Sent Mail'||
+          $title==='Draft'||$title==='Trash') class="active" @endif>
           <a href="{{url('inbox')}}">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
@@ -380,30 +388,37 @@ width: 50%;
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{url('inbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
-            <li><a href="{{url('compose')}}"><i class="fa fa-envelope-o"></i> Compose</a></li>
-            <li><a href="{{url('sentbox')}}"><i class="fa fa-mail-forward"></i> Sent</a></li>
-            <li><a href="{{url('draft')}}"><i class="fa fa-file-text-o"></i> Draft</a></li>
-            <li><a href="{{url('trash')}}"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li @if($title==='Inbox') class="active" @endif><a href="{{url('inbox')}}">
+              <i class="fa fa-inbox"></i> Inbox</a></li>
+            <li @if($title==='Compose Mail') class="active" @endif><a href="{{url('compose')}}">
+              <i class="fa fa-envelope-o"></i> Compose</a></li>
+            <li @if($title==='Sent Mail') class="active" @endif><a href="{{url('sentbox')}}">
+              <i class="fa fa-mail-forward"></i> Sent</a></li>
+            <li @if($title==='Draft') class="active" @endif><a href="{{url('draft')}}">
+              <i class="fa fa-file-text-o"></i> Draft</a></li>
+            <li @if($title==='Trash') class="active" @endif><a href="{{url('trash')}}">
+              <i class="fa fa-trash-o"></i> Trash</a></li>
           </ul>
         </li>
 
-        <li class="treeview">
-          <a href="#">
+        <li @if($title==='Drop Locations'||$title==='Drop Locations List') class="active" @endif>
+          <a href="{{url('droplocation')}}">
             <i class="fa fa-map-marker"></i> <span>Drop Locations</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{url('droplocation')}}"><i class="fa fa-plus"></i> Add Drop Location</a></li>
-            <li><a href="{{url('compose')}}"><i class="fa fa-list-ul"></i> List </a></li>
+            <li @if($title==='Drop Locations') class="active" @endif><a href="{{url('droplocation')}}">
+              <i class="fa fa-plus"></i> Add Drop Location</a></li>
+            <li @if($title==='Drop Locations List') class="active" @endif><a href="">
+              <i class="fa fa-list-ul"></i> List </a></li>
           </ul>
         </li>
 
 
-        <li>
-          <a href="{{url('message')}}">
+        <li @if($title==='Members') class="active" @endif>
+          <a href="{{url('messages')}}">
             <i class="fa fa-commenting-o"></i> <span>Messages</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-yellow">{{count($messagecount)}}</small>

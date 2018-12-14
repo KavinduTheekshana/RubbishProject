@@ -39,4 +39,21 @@ class ContactController extends Controller
      // return redirect('addmembers')->with('status', 'Profile Added Sucessfully');
      return redirect()->back()->with('status', 'Your Message Send Sucessfully');
   }
+
+  public function messagesview(){
+    $title='Messages';
+
+    $id =Auth::user()->id;
+    $profile = DB::table('users')->where(['id'=>$id])->first();
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
+    $messagesview=DB::table('messages')->orderby('contact_id','desc')->paginate(10);
+
+    return view('admin.pages.messages',['profile'=>$profile,'title'=>$title,
+    'messagecount'=>$messagecount,'message'=>$message,'messagesview'=>$messagesview]);
+  }
+
+
+
 }

@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
+    <link rel="icon" type="image/png" href="icon/favicon.ico"/>
+
     <link rel='stylesheet' href='Admin/bower_components/font-awesome/css/font-awesome.min.css'>
 
     <link rel="stylesheet" href="Auth/css/style.css">

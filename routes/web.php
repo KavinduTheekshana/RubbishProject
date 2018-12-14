@@ -82,6 +82,8 @@ Route::get('contact','ContactController@contactView');
 Route::get('viewpost/{ids}', 'BlogController@viewpost');
 Route::get('deletepost/{ids}', 'BlogController@deletepost');
 
+Route::get('messages','ContactController@messagesview');
+
 Route::post('/addCategory', 'categoryController@addcategory');
 
 Route::post('/addProfile', 'ProfileController@addProfile');

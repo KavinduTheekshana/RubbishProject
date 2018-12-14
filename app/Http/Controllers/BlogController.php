@@ -25,8 +25,10 @@ class BlogController extends Controller
   }
 
   public function viewpost($post_id){
+
     $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['posts.postid'=>$post_id])->get();
-    return view('blog.post',['post'=>$post]);
+    $title='View Post';
+    return view('blog.post',['post'=>$post,'title'=>$title]);
   }
 
   public function deletepost($post_id){

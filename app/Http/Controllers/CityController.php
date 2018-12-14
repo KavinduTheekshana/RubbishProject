@@ -17,14 +17,14 @@ use App\post;
 class CityController extends Controller
 {
   public function addcities(){
-    $title='Add Article';
+    $title='Add Cities';
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
     $city=DB::table('cities')->get();
     $citycount=DB::table('cities')->count();
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
     return view('admin.pages.addcities',['profile'=>$profile,'city'=>$city,
     'citycount'=>$citycount,'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
