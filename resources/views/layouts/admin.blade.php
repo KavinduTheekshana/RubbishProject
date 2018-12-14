@@ -265,28 +265,15 @@ width: 50%;
 
                 <p>
                   {{$profile->name}} - {{$profile->job}}
-                  <small>Member since -{{$profile->created_at}}</small>
+                  <small>Member since -{{ date('d-M-Y | H:i:s', strtotime($profile->created_at)) }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{url('profile')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout" class="btn btn-default btn-flat">Sign out</a>

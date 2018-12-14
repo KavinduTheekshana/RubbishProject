@@ -20,13 +20,13 @@ class CityController extends Controller
     $title='Add Cities';
     $id =Auth::user()->id;
     $profile = DB::table('users')->where(['id'=>$id])->first();
-    $city=DB::table('cities')->get();
+    $citys=DB::table('cities')->paginate(10);
     $citycount=DB::table('cities')->count();
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
-    return view('admin.pages.addcities',['profile'=>$profile,'city'=>$city,
+    return view('admin.pages.addcities',['profile'=>$profile,'citys'=>$citys,
     'citycount'=>$citycount,'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
   }
 

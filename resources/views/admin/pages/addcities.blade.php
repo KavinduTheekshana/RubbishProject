@@ -76,7 +76,7 @@
                   <th>Totel Members</th>
                 </tr>
                 </thead>
-                @foreach($city as $city)
+                @foreach($citys as $city)
                 <tbody>
                 <tr>
                   <td>{{$city->id}}</td>
@@ -88,6 +88,11 @@
               </table>
             </div>
             <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                {!! $citys->links(); !!}
+              </ul>
+            </div>
           </div>
         </div>
 

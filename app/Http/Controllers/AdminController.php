@@ -8,9 +8,9 @@ use DB;
 use App\users;
 use Auth;
 
-class allController extends Controller
+class AdminController extends Controller
 {
-  public function dash(){
+  public function dashboard(){
     $title='Dashboard';
     $data = DB::table('users')->count();
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(8);

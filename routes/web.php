@@ -32,7 +32,7 @@ Auth::routes();
 
 Route::get('members','MemberController@index');
 
-Route::get('addmembers','MemberController@addmembers');
+Route::get('addmembers','MemberController@addmembers')->middleware('auth');
 
 Route::get('profile','ProfileController@profile');
 
@@ -54,7 +54,7 @@ Route::get('trash','MailController@trash');
 
 Route::get('droplocation','LocationController@droplocation');
 
-Route::get('/dashboard', 'allController@dash');
+Route::get('/dashboard', 'AdminController@dashboard')->middleware('Admin')->name('dashboard');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -105,3 +105,16 @@ Route::post('/sendmail', 'MailController@sendmail');
 Route::post('/adddraft', 'MailController@adddraft');
 
 Route::post('/contactSave', 'ContactController@contactSave');
+
+
+
+Route::get('/checkUserType','CheckUserTypeController@checkUserType');
+
+// Route::get('adminPage',[
+//   'uses' => 'AdminController@getAdminView',
+//   'as' => 'adminPage'
+// ])->middleware('Admin');
+
+Route::get('captainPage','CaptainController@getCaptainView');
+Route::get('staffPage','StaffController@getStaffView')->middleware('Staff')->name('staffPage');
+Route::get('volunteerPage','VolunteerController@getvolunteerView');

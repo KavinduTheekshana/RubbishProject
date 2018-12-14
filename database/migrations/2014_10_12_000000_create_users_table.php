@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->string('suburb');
             $table->string('job');
+            $table->string('profile_pic')->default('uploads\default.jpg');
+            $table->string('action')->default('unblocked');
             $table->rememberToken();
             $table->timestamps();
         });
