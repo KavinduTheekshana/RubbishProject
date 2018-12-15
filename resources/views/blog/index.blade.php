@@ -23,7 +23,7 @@
                      ...
                    @endif</p>
 							<div class="date">
-								<a ><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('D-M-Y', strtotime($slider->publish_date)) }}</a>
+								<a ><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('d-M-Y', strtotime($slider->publish_date)) }}</a>
 								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
                            ...
                          @endif</p>
 										<div class="date">
-											<a><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('D-M-Y', strtotime($post->publish_date)) }}</a>
+											<a><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('d-M-Y', strtotime($post->publish_date)) }}</a>
 											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
 										</div>
 									</div>

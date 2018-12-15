@@ -32,7 +32,7 @@
                   <b>Gender</b> <a class="pull-right">{{$user->gender}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>City</b> <a class="pull-right">{{$user->city}}</a>
+                  <b>City</b> <a class="pull-right">{{$user->city_name}}</a>
                 </li>
                 <li class="list-group-item">
                   <b>Suburb</b> <a class="pull-right">{{$user->suburb}}</a>

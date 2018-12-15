@@ -24,7 +24,7 @@ class ProfileController extends Controller
       $id =Auth::user()->id;
       $name =Auth::user()->name;
       $title=$name;
-      $profile = DB::table('users')->where(['id'=>$id])->first();
+      $profile = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$id])->first();
 
       $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->
       where(['user_id'=>$id])->orderBy('posts.postid', 'desc')->paginate(4);
@@ -91,7 +91,7 @@ class ProfileController extends Controller
        $users->name = $request->input('name');
        $users->email = $request->input('email');
        $users->password = Hash::make($request['password']);
-       $users->birthday = $request->input('year').'.'.$request->input('month').'.'.$request->input('date');
+       $users->birthday = $request->input('year').'-'.$request->input('month').'-'.$request->input('date');
        $users->gender = $request->input('gender');
        $users->city = $request->input('city');
        $users->suburb = $request->input('suburb');
@@ -166,7 +166,7 @@ class ProfileController extends Controller
 
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
-      $user = DB::table('users')->where(['id'=>$ids])->first();
+      $user = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$ids])->first();
       $title=$user->name;
 
       $messagecount=DB::table('messages')->where('read_or_not','0')->get();
@@ -180,7 +180,7 @@ class ProfileController extends Controller
     public function editprofile(){
           $title='Edit Profile';
           $id =Auth::user()->id;
-          $profile = DB::table('users')->where(['id'=>$id])->first();
+          $profile = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$id])->first();
 
           $messagecount=DB::table('messages')->where('read_or_not','0')->get();
           $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();

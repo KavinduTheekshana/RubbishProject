@@ -88,7 +88,7 @@
                     @endif
                   </td>
                   <td>{{$row->email}}</td>
-                  <td>{{$row->city}}</td>
+                  <td>{{$row->city_name}}</td>
                   <td>{{$row->suburb}}</td>
 
 

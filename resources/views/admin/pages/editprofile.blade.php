@@ -87,7 +87,7 @@
 
                 <div class="form-group">
                   <label >City</label>
-                  <input type="text" class="form-control" value="{{$profile->city}}" name="city">
+                  <input type="text" class="form-control" value="{{$profile->city_name}}" name="city">
                 </div>
 
                 <div class="form-group">

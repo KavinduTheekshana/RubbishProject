@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\users;
 use DB;
 use Auth;
+use App\citie;
 
 class MemberController extends Controller
 {
   public function index(){
     $title='Members';
-     $members=users::paginate(10);
+     // $members=users::paginate(10);
+     $members=DB::table('users')->join('cities','users.city','=','cities.city_id')->paginate(10);
      $id =Auth::user()->id;
      $profile = DB::table('users')->where(['id'=>$id])->first();
 
@@ -32,8 +34,10 @@ class MemberController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
 
+    $cities = citie::all();
+
     return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,
-    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities]);
   }
 
 

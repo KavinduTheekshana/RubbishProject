@@ -79,9 +79,9 @@
                 @foreach($citys as $city)
                 <tbody>
                 <tr>
-                  <td>{{$city->id}}</td>
-                  <td>{{$city->city}}</td>
-                  <td>Win 95+</td>
+                  <td>{{$city->city_id}}</td>
+                  <td>{{$city->city_name}}</td>
+                  <td>{{count($cityMemberCount)}}</td>
                 </tr>
                 @endforeach
                 </tfoot>

@@ -50,32 +50,32 @@
 
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input type="text" class="form-control"  placeholder="Enter Full Name" name="name">
+                  <input type="text" class="form-control"  placeholder="Enter Full Name" name="name" required>
                 </div>
                 <div class="form-group">
                   <label >Email address</label>
-                  <input type="email" class="form-control"  placeholder="Enter email" name="email">
+                  <input type="email" class="form-control"  placeholder="Enter email" name="email" required>
                 </div>
                 <div class="form-group">
                   <label >Password</label>
-                  <input type="password" class="form-control"  placeholder="Password" name="password">
+                  <input type="password" class="form-control"  placeholder="Password" name="password" required>
                 </div>
                 <div class="form-group">
                   <label >Password Confirm</label>
-                  <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation">
+                  <input type="password" class="form-control"  placeholder="Password Confirm" name="password_confirmation" required>
                 </div>
 
                 <div class="form-group">
                   <label >Date of Birth</label>
                   <div class="row">
                   <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="DD" name="date">
+                    <input type="text" class="form-control" placeholder="DD" name="date" required>
                   </div>
                   <div class="col-xs-2">
-                    <input type="text" class="form-control" placeholder="MM" name="month">
+                    <input type="text" class="form-control" placeholder="MM" name="month" required>
                   </div>
                   <div class="col-xs-3">
-                    <input type="text" class="form-control" placeholder="YYYY" name="year">
+                    <input type="text" class="form-control" placeholder="YYYY" name="year" required>
                   </div>
                 </div>
                 </div>
@@ -99,12 +99,18 @@
 
                 <div class="form-group">
                   <label >City</label>
-                  <input type="text" class="form-control" placeholder="Enter Your City" name="city">
+                  <select class="form-control" placeholder="Enter Your City" name="city" required>
+                    @if(count($cities)>0)
+                      @foreach($cities->all() as $citie)
+                        <option value="{{$citie->city_id}}">{{$citie->city_name}}</option>
+                      @endforeach
+                    @endif
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label>Suburb</label>
-                  <input type="text" class="form-control" placeholder="Enter Your Suburb" name="suburb">
+                  <input type="text" class="form-control" placeholder="Enter Your Suburb" name="suburb" required>
                 </div>
 
                 <div class="form-group">

@@ -17,9 +17,10 @@ class CreatePostsTable extends Migration
             $table->increments('postid');
             $table->integer('user_id');
             $table->string('post_title');
+            $table->string('category');
             $table->text('post_body');
-            $table->integer('list_id');
             $table->string('post_image');
+            $table->timestamps('publish_date');
             $table->timestamps();
         });
     }
