@@ -47,13 +47,25 @@ class ContactController extends Controller
     $profile = DB::table('users')->where(['id'=>$id])->first();
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
-    $messagesview=DB::table('messages')->orderby('contact_id','desc')->paginate(10);
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
+    $messagesview=DB::table('messages')->orderby('id','desc')->paginate(10);
 
     return view('admin.pages.messages',['profile'=>$profile,'title'=>$title,
     'messagecount'=>$messagecount,'message'=>$message,'messagesview'=>$messagesview]);
   }
 
+  public function markAsUnread($id){
+    $task=message::find($id);
+    $task->read_or_not=0;
+    $task->save();
+    return redirect()->back();
+  }
+  public function markAsRead($id){
+    $task=message::find($id);
+    $task->read_or_not=1;
+    $task->save();
+    return redirect()->back();
+  }
 
 
 }

@@ -18,7 +18,7 @@ class MemberController extends Controller
      $profile = DB::table('users')->where(['id'=>$id])->first();
 
      $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-     $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
+     $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
      return view('admin.pages.members',['members'=>$members,'profile'=>$profile,
      'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
@@ -32,7 +32,7 @@ class MemberController extends Controller
     $members = DB::table('users')->orderBy('id', 'desc')->paginate(16);
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
     $cities = citie::all();
 
@@ -62,15 +62,15 @@ class MemberController extends Controller
   }
 
 
-  public function hald($id){
+  public function block($id){
     $task=users::find($id);
-    $task->action='blocked';
+    $task->job='blocked';
     $task->save();
     return redirect()->back();
   }
   public function unblock($id){
     $task=users::find($id);
-    $task->action='unblocked';
+    $task->job='unblocked';
     $task->save();
     return redirect()->back();
   }

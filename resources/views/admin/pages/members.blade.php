@@ -70,8 +70,10 @@
                   <span class="label label-danger">{{$row->job}}</span>
                   @elseif($row->job==='Volunteer')
                   <span class="label label-success">{{$row->job}}</span>
-                  @else($row->job==='Staff')
+                  @elseif($row->job==='Staff')
                   <span class="label label-warning">{{$row->job}}</span>
+                  @else($row->job==='blocked')
+                  <span class="label label-default">{{$row->job}}</span>
                   @endif</td>
                   <td>
                     @if($row->job==='Admin')
@@ -96,10 +98,10 @@
                     @if($row->job==='Admin')
                     @else
                     <a href="viewprofile/{{$row->id}}" class="btn btn-primary">View</a>
-                    @if($row->action==='unblocked')
-                    <a href="hald/{{$row->id}}" type="button" class="btn btn-warning">&nbsp&nbsp&nbsp&nbspHold&nbsp&nbsp&nbsp</a>
-                    @elseif($row->action==='blocked')
-                    <a href="unblock/{{$row->id}}" type="button" class="btn btn-default">Unblock</a>
+                    @if($row->job==='unblocked'||$row->job==='Staff'||$row->job==='Volunteer'||$row->job==='Captain')
+                    <a href="block/{{$row->id}}" type="button" class="btn btn-warning">&nbsp&nbspBlock&nbsp&nbsp</a>
+                    @elseif($row->job==='blocked')
+                    <a href="unblock/{{$row->id}}" type="button" title="If You Want Unblock,Please Add Job Type" class="btn btn-default" disabled>BLOCKED</a>
                     @endif
                     <span><a  type="button" data-toggle="modal" data-target="#modal-danger" class="btn btn-danger remove">Delete</a>
                       <div class="modal modal-danger fade" id="modal-danger">

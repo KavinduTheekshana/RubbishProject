@@ -87,7 +87,15 @@
 
                 <div class="form-group">
                   <label >City</label>
-                  <input type="text" class="form-control" value="{{$profile->city_name}}" name="city">
+                  <select class="form-control" placeholder="Enter Your City" name="city" required>
+                    <option value="{{$profile->city_name}}">{{$profile->city_name}}</option>
+                    @if(count($cities)>0)
+                      @foreach($cities->all() as $citie)
+                        <option value="{{$citie->city_id}}">{{$citie->city_name}}</option>
+                      @endforeach
+                    @endif
+                  </select>
+                  <!-- <input type="text" class="form-control" value="{{$profile->city_name}}" name="city"> -->
                 </div>
 
                 <div class="form-group">

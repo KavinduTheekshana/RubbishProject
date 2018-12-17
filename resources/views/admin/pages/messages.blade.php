@@ -43,11 +43,11 @@
               <h3 class="box-title">{{$msg->subject}}</h3> <br>
               <div class="box-tools pull-right">
                 @if(($msg->read_or_not)===0)
-                <a class="btn btn-danger">
+                <a href="markAsRead/{{$msg->id}}" class="btn btn-danger">
                   <span class="glyphicon glyphicon-check"></span> Mark As Read
                 </a>
                 @else
-                <a class="btn btn-success">
+                <a href="markAsUnread/{{$msg->id}}" class="btn btn-success">
                   <span class="glyphicon glyphicon-remove-circle"></span> Mark As UnRead
                 </a>
                 @endif

@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+
         'api' => [
             'throttle:60,1',
             'bindings',
@@ -64,6 +65,8 @@ class Kernel extends HttpKernel
         'Captain' =>\App\Http\Middleware\CaptainMiddleware::class,
         'Staff' =>\App\Http\Middleware\StaffMiddleware::class,
         'Volunteer' =>\App\Http\Middleware\VolunteerMiddleware::class,
+        'blocked' =>\App\Http\Middleware\BlockedMiddleware::class,
+        'revalidate' => \App\Http\Middleware\RevalidateBackHistory::class,
     ];
 
     /**

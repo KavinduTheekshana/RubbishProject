@@ -24,7 +24,7 @@ class CityController extends Controller
     $citycount=DB::table('cities')->count();
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->orderby('contact_id','desc')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
     $cityMemberCount = DB::table('users')->join('cities','cities.city_id','users.city')->where('users.city','cities.city_id')->get();
 

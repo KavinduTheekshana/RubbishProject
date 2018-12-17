@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="crop/croppie.css" />
 
 
+
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -95,7 +96,7 @@ width: 50%;
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="{{url('messages')}}" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-commenting-o"></i>
               <span class="label label-warning">{{count($messagecount)}}</span>
             </a>
@@ -107,7 +108,7 @@ width: 50%;
 
                   @foreach($message as $msg)
                   <li><!-- start message -->
-                    <a href="#">
+                    <a href="{{url('messages')}}">
                       <div class="pull-left">
                         <img src="Admin\dist\img\msg.jpg" class="img-circle" alt="User Image">
                       </div>
@@ -129,7 +130,7 @@ width: 50%;
 
                 </ul>
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer"><a href="{{url('messages')}}">See All Messages</a></li>
             </ul>
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
@@ -404,12 +405,18 @@ width: 50%;
         </li>
 
 
-        <li @if($title==='Members') class="active" @endif>
+        <li @if($title==='Messages') class="active" @endif>
           <a href="{{url('messages')}}">
             <i class="fa fa-commenting-o"></i> <span>Messages</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-yellow">{{count($messagecount)}}</small>
             </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="{{url('/')}}">
+            <i class="fa fa-clipboard"></i> <span>Blog</span>
           </a>
         </li>
 
