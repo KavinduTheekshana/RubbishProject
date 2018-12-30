@@ -33,8 +33,10 @@ class ProfileController extends Controller
       $messagecount=DB::table('messages')->where('read_or_not','0')->get();
       $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+      $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
       return view('admin.pages.profile',['profile'=>$profile,'post'=>$post,'title'=>$title,
-      'messagecount'=>$messagecount,'message'=>$message]);
+      'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
     }
 
 
@@ -173,8 +175,10 @@ class ProfileController extends Controller
       $messagecount=DB::table('messages')->where('read_or_not','0')->get();
       $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+      $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
       return view('admin.pages.membersprofile',['profile'=>$profile,'user'=>$user,
-      'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
+      'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
     }
 
 
@@ -186,10 +190,12 @@ class ProfileController extends Controller
           $messagecount=DB::table('messages')->where('read_or_not','0')->get();
           $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+          $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
           $cities = citie::all();
 
           return view('admin.pages.editprofile',['profile'=>$profile,'title'=>$title,
-          'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities]);
+          'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities,'notification'=>$notification]);
         }
 
 

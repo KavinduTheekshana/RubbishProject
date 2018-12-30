@@ -50,8 +50,10 @@ class ContactController extends Controller
     $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
     $messagesview=DB::table('messages')->orderby('id','desc')->paginate(10);
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.messages',['profile'=>$profile,'title'=>$title,
-    'messagecount'=>$messagecount,'message'=>$message,'messagesview'=>$messagesview]);
+    'messagecount'=>$messagecount,'message'=>$message,'messagesview'=>$messagesview,'notification'=>$notification]);
   }
 
   public function markAsUnread($id){

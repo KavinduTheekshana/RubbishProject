@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\notification;
 
-class BlockedController extends Controller
+class NotificationController extends Controller
 {
     public function getblockedView(){
         return view('blocked');

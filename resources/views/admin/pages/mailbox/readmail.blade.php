@@ -52,7 +52,7 @@
               <div class="mailbox-read-info">
                 <h3>{{$mails->subject}}</h3>
                 <h5>From: {{$mails->email}}
-                  <span class="mailbox-read-time pull-right">{{ date('D-M-Y | H:i:s', strtotime($mails->date)) }}</span></h5>
+                  <span class="mailbox-read-time pull-right">{{ date('D-M-Y | H:i:s', strtotime($mails->created_at)) }}</span></h5>
               </div>
               <!-- /.mailbox-read-info -->
               <div class="mailbox-controls with-border text-center">

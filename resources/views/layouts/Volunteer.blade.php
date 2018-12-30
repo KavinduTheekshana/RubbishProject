@@ -234,21 +234,9 @@ width: 50%;
           </a>
         </li>
 
-        <li @if($title==='Members') class="active" @endif>
-          <a href="{{url('members')}}">
-            <i class="fa fa-users"></i> <span>Members</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
 
-        <li @if($title==='Add Member') class="active" @endif>
-          <a href="{{url('addmembers')}}">
-            <i class="fa fa-user-plus"></i> <span>Add Members</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
+
+
 
         <li @if($title===($profile->name)) class="active" @endif>
           <a href="{{url('profile')}}">
@@ -258,21 +246,9 @@ width: 50%;
           </a>
         </li>
 
-        <li @if($title==='Post Article') class="active" @endif>
-          <a href="{{url('postarticle')}}">
-            <i class="fa fa-newspaper-o"></i> <span>Post Article</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
 
-        <li @if($title==='Add Cities') class="active" @endif>
-          <a href="{{url('addcities')}}">
-            <i class="fa fa-map"></i> <span>Add Cities</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
+
+
 
 
         <li @if($title==='Inbox'||$title==='Compose Mail'||$title==='Sent Mail'||
@@ -314,14 +290,7 @@ width: 50%;
         </li>
 
 
-        <li @if($title==='Messages') class="active" @endif>
-          <a href="{{url('messages')}}">
-            <i class="fa fa-commenting-o"></i> <span>Messages</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">{{count($messagecount)}}</small>
-            </span>
-          </a>
-        </li>
+
 
         <li>
           <a href="{{url('/')}}">

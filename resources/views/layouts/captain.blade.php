@@ -96,72 +96,127 @@ width: 50%;
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="{{url('messages')}}" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-commenting-o"></i>
-              <span class="label label-danger">{{count($messagecount)}}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{count($messagecount)}} Unread messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
 
-                  @foreach($message as $msg)
-                  <li><!-- start message -->
-                    <a href="{{url('messages')}}">
-                      <div class="pull-left">
-                        <img src="Admin\dist\img\msg.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        {!! substr(strip_tags($msg->subject), 0, 20) !!}
-                          @if (strlen(strip_tags($msg->subject)) > 20)
-                               ...
-                             @endif
-                        <small><i class="fa fa-clock-o"></i> {{ date('H:i:d', strtotime($msg->created_at)) }}</small>
-                      </h4>
-                      <p>{!! substr(strip_tags($msg->message), 0, 30) !!}
-                        @if (strlen(strip_tags($msg->message)) > 30)
-                             ...
-                           @endif</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  @endforeach
-
-                </ul>
-              </li>
-              <li class="footer"><a href="{{url('messages')}}">See All Messages</a></li>
-            </ul>
-          </li>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{{count($notification)}}</span>
+              <span class="label label-warning">10</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have {{count($notification)}} notifications</li>
+              <li class="header">You have 10 notifications</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>
-
                     <a href="#">
-                      <i class="fa fa-users text-aqua"></i> {!! substr(strip_tags($msg->message), 0, 30) !!}
-                        @if (strlen(strip_tags($msg->message)) > 30)
-                             ...
-                           @endif
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
                     </a>
                   </li>
-
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
-
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                        role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Create a nice theme
+                        <small class="pull-right">40%</small>
+                      </h3>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%"
+                         role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Some task I need to do
+                        <small class="pull-right">60%</small>
+                      </h3>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%"
+                        role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Make beautiful transitions
+                        <small class="pull-right">80%</small>
+                      </h3>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%"
+                         role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -211,7 +266,7 @@ width: 50%;
         </div>
       </div>
       <!-- search form -->
-      <!-- <form action="#" method="get" class="sidebar-form">
+      <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -220,7 +275,7 @@ width: 50%;
                 </button>
               </span>
         </div>
-      </form> -->
+      </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -234,24 +289,10 @@ width: 50%;
           </a>
         </li>
 
-        <li @if($title==='Members') class="active" @endif>
-          <a href="{{url('members')}}">
-            <i class="fa fa-users"></i> <span>Members</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
 
-        <li @if($title==='Add Member') class="active" @endif>
-          <a href="{{url('addmembers')}}">
-            <i class="fa fa-user-plus"></i> <span>Add Members</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
 
         <li @if($title===($profile->name)) class="active" @endif>
-          <a href="{{url('profile')}}">
+          <a href="{{url('captainprofile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
             </span>
@@ -259,20 +300,14 @@ width: 50%;
         </li>
 
         <li @if($title==='Post Article') class="active" @endif>
-          <a href="{{url('postarticle')}}">
+          <a href="{{url('captainpostarticle')}}">
             <i class="fa fa-newspaper-o"></i> <span>Post Article</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
 
-        <li @if($title==='Add Cities') class="active" @endif>
-          <a href="{{url('addcities')}}">
-            <i class="fa fa-map"></i> <span>Add Cities</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
+
 
 
         <li @if($title==='Inbox'||$title==='Compose Mail'||$title==='Sent Mail'||
@@ -298,30 +333,9 @@ width: 50%;
           </ul>
         </li>
 
-        <li @if($title==='Drop Locations'||$title==='Drop Locations List') class="active" @endif>
-          <a href="{{url('droplocation')}}">
-            <i class="fa fa-map-marker"></i> <span>Drop Locations</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li @if($title==='Drop Locations') class="active" @endif><a href="{{url('droplocation')}}">
-              <i class="fa fa-plus"></i> Add Drop Location</a></li>
-            <li @if($title==='Drop Locations List') class="active" @endif><a href="{{url('droplocationlist')}}">
-              <i class="fa fa-list-ul"></i> List </a></li>
-          </ul>
-        </li>
 
 
-        <li @if($title==='Messages') class="active" @endif>
-          <a href="{{url('messages')}}">
-            <i class="fa fa-commenting-o"></i> <span>Messages</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">{{count($messagecount)}}</small>
-            </span>
-          </a>
-        </li>
+
 
         <li>
           <a href="{{url('/')}}">

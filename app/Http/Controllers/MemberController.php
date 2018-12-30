@@ -20,8 +20,10 @@ class MemberController extends Controller
      $messagecount=DB::table('messages')->where('read_or_not','0')->get();
      $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+     $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
      return view('admin.pages.members',['members'=>$members,'profile'=>$profile,
-     'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
+     'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function addmembers(){
@@ -34,10 +36,12 @@ class MemberController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     $cities = citie::all();
 
     return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,
-    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities]);
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities,'notification'=>$notification]);
   }
 
 

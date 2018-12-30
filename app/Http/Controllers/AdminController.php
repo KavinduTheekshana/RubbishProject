@@ -20,8 +20,10 @@ class AdminController extends Controller
       $post =DB::table('posts')->orderBy('postid', 'desc')->paginate(4);
       $messagecount=DB::table('messages')->where('read_or_not','0')->get();
       $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
+      $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
 
     return view('admin.Dashboard',['users'=>$data,'members'=>$members,
-      'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message]);
+      'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message,
+      'notification'=>$notification]);
     }
 }

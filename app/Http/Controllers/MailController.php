@@ -25,8 +25,10 @@ class MailController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.mailbox.Compose',['profile'=>$profile,
-    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function sentbox(){
@@ -38,8 +40,10 @@ class MailController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.mailbox.sentmail',['profile'=>$profile,
-    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function inbox(){
@@ -52,8 +56,10 @@ class MailController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.mailbox.inbox',['profile'=>$profile,
-    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function draft(){
@@ -65,8 +71,10 @@ class MailController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.mailbox.draft',['profile'=>$profile,
-    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function trash(){
@@ -78,8 +86,10 @@ class MailController extends Controller
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->get();
 
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
     return view('admin.pages.mailbox.trash',['profile'=>$profile,
-    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
   }
 
   public function sendmail(Request $request){
@@ -139,8 +149,14 @@ class MailController extends Controller
     $id =Auth::user()->id;
     $mails=DB::table('mails')->join('users','mails.publisher_id','=','users.id')->where(['mails.mail_id'=>$postid])->first();
     $profile = DB::table('users')->where(['id'=>$id])->first();
+
+    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+    $message=DB::table('messages')->where('read_or_not','0')->get();
+
+    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
     return view('admin.pages.mailbox.readmail',['profile'=>$profile,
-    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,'message'=>$message]);
+    'title'=>$title,'mails'=>$mails,'messagecount'=>$messagecount,
+    'message'=>$message,'notification'=>$notification]);
   }
 
 

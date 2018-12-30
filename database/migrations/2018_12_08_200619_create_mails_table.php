@@ -14,7 +14,7 @@ class CreateMailsTable extends Migration
     public function up()
     {
         Schema::create('mails', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('mail_id');
             $table->integer('publisher_id');
             $table->string('to');
             $table->string('subject');

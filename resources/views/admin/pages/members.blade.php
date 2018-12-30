@@ -104,6 +104,7 @@
                     <a href="unblock/{{$row->id}}" type="button" title="If You Want Unblock,Please Add Job Type" class="btn btn-default" disabled>BLOCKED</a>
                     @endif
                     <span><a  type="button" data-toggle="modal" data-target="#modal-danger" class="btn btn-danger remove">Delete</a>
+                      
                       <div class="modal modal-danger fade" id="modal-danger">
                         <div class="modal-dialog">
                           <div class="modal-content">

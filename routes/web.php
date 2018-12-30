@@ -31,17 +31,17 @@ Route::group(['middleware' => 'revalidate'], function()
 
   Auth::routes();
 
-  Route::get('members','MemberController@index');
+  Route::get('members','MemberController@index')->middleware('Admin');
 
-  Route::get('addmembers','MemberController@addmembers');
+  Route::get('addmembers','MemberController@addmembers')->middleware('Admin');
 
-  Route::get('profile','ProfileController@profile');
+  Route::get('profile','ProfileController@profile')->middleware('Admin');
 
-  Route::get('addcities','CityController@addcities');
+  Route::get('addcities','CityController@addcities')->middleware('Admin');
 
-  Route::get('postarticle','PostController@postarticle');
+  Route::get('postarticle','PostController@postarticle')->middleware('Admin');
 
-  Route::get('editprofile','ProfileController@editprofile');
+  Route::get('editprofile','ProfileController@editprofile')->middleware('Admin');
 
   Route::get('compose','MailController@compose');
 
@@ -54,12 +54,15 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::get('trash','MailController@trash');
 
   Route::get('droplocation','LocationController@droplocation');
+  Route::get('droplocationlist','LocationController@droplocationlist');
+  Route::get('deletelocation/{id}','LocationController@deletelocation');
 
   // middleware and routs==============================================
+  Route::get('/checkUserType','CheckUserTypeController@checkUserType');
   Route::get('/dashboard', 'AdminController@dashboard')->middleware('Admin')->name('dashboard');
   Route::get('/captainPage','CaptainController@getCaptainView')->middleware('Captain')->name('captainPage');
   Route::get('/staffPage','StaffController@getStaffView')->middleware('Staff')->name('staffPage');
-  Route::get('/volunteerPage','VolunteerController@getvolunteerView')->middleware('Staff')->name('volunteerPage');
+  Route::get('/volunteerPage','VolunteerController@getvolunteerView')->middleware('Volunteer')->name('volunteerPage');
   Route::get('/blocked','BlockedController@getblockedView')->middleware('blocked')->name('blocked');
 
   Route::get('/home', 'HomeController@index')->name('home');
@@ -93,6 +96,16 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::get('markAsUnread/{id}', 'ContactController@markAsUnread');
   Route::get('markAsRead/{id}', 'ContactController@markAsRead');
 
+  Route::get('/save','LocationController@save');
+
+//captain route get
+  Route::get('captainprofile','CaptainController@captainprofile');
+  Route::get('captainpostarticle','CaptainController@captainpostarticle');
+
+  Route::post('/addPosts', 'CaptainController@addPost');
+
+
+//admin route post
   Route::post('/addCategory', 'categoryController@addcategory');
 
   Route::post('/addProfile', 'ProfileController@addProfile');
@@ -115,8 +128,10 @@ Route::group(['middleware' => 'revalidate'], function()
 
   Route::post('/contactSave', 'ContactController@contactSave');
 
+  Route::post('/request', 'BlockedController@request');
 
 
-  Route::get('/checkUserType','CheckUserTypeController@checkUserType');
+
+
 
 });
