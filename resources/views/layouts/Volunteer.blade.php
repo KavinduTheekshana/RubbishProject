@@ -95,71 +95,20 @@ width: 50%;
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="{{url('messages')}}" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-commenting-o"></i>
-              <span class="label label-danger">{{count($messagecount)}}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{count($messagecount)}} Unread messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
 
-                  @foreach($message as $msg)
-                  <li><!-- start message -->
-                    <a href="{{url('messages')}}">
-                      <div class="pull-left">
-                        <img src="Admin\dist\img\msg.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        {!! substr(strip_tags($msg->subject), 0, 20) !!}
-                          @if (strlen(strip_tags($msg->subject)) > 20)
-                               ...
-                             @endif
-                        <small><i class="fa fa-clock-o"></i> {{ date('H:i:d', strtotime($msg->created_at)) }}</small>
-                      </h4>
-                      <p>{!! substr(strip_tags($msg->message), 0, 30) !!}
-                        @if (strlen(strip_tags($msg->message)) > 30)
-                             ...
-                           @endif</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  @endforeach
 
-                </ul>
-              </li>
-              <li class="footer"><a href="{{url('messages')}}">See All Messages</a></li>
-            </ul>
-          </li>
-          <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{{count($notification)}}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{count($notification)}} notifications</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li>
 
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> {!! substr(strip_tags($msg->message), 0, 30) !!}
-                        @if (strlen(strip_tags($msg->message)) > 30)
-                             ...
-                           @endif
-                    </a>
-                  </li>
 
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
+
+
+
+
+
+
+
+
+
+
           <!-- Tasks: style can be found in dropdown.less -->
 
           <!-- User Account: style can be found in dropdown.less -->
@@ -226,69 +175,39 @@ width: 50%;
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li @if($title==='Dashboard') class="active" @endif>
-          <a href="{{url('/dashboard')}}">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-
-
-
 
         <li @if($title===($profile->name)) class="active" @endif>
-          <a href="{{url('profile')}}">
+          <a href="{{url('volunteerprofile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
 
-
-
-
-
-
-        <li @if($title==='Inbox'||$title==='Compose Mail'||$title==='Sent Mail'||
-          $title==='Draft'||$title==='Trash') class="active" @endif>
-          <a href="{{url('inbox')}}">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+        
+        <li @if($title==='Submit Location') class="active" @endif>
+          <a href="{{url('Submit_Location')}}">
+            <i class="fa fa-map-marker"></i> <span>Submit Location</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              <small class="label pull-right bg-red">12</small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li @if($title==='Inbox') class="active" @endif><a href="{{url('inbox')}}">
-              <i class="fa fa-inbox"></i> Inbox</a></li>
-            <li @if($title==='Compose Mail') class="active" @endif><a href="{{url('compose')}}">
-              <i class="fa fa-envelope-o"></i> Compose</a></li>
-            <li @if($title==='Sent Mail') class="active" @endif><a href="{{url('sentbox')}}">
-              <i class="fa fa-mail-forward"></i> Sent</a></li>
-            <li @if($title==='Draft') class="active" @endif><a href="{{url('draft')}}">
-              <i class="fa fa-file-text-o"></i> Draft</a></li>
-            <li @if($title==='Trash') class="active" @endif><a href="{{url('trash')}}">
-              <i class="fa fa-trash-o"></i> Trash</a></li>
-          </ul>
         </li>
 
-        <li @if($title==='Drop Locations'||$title==='Drop Locations List') class="active" @endif>
-          <a href="{{url('droplocation')}}">
-            <i class="fa fa-map-marker"></i> <span>Drop Locations</span>
+        <li @if($title==='Submited Locations List') class="active" @endif>
+          <a href="{{url('SubmitedLocationList')}}">
+            <i class="fa fa-list-ul"></i> <span>Location List</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li @if($title==='Drop Locations') class="active" @endif><a href="{{url('droplocation')}}">
-              <i class="fa fa-plus"></i> Add Drop Location</a></li>
-            <li @if($title==='Drop Locations List') class="active" @endif><a href="{{url('droplocationlist')}}">
-              <i class="fa fa-list-ul"></i> List </a></li>
-          </ul>
         </li>
 
+        <li @if($title==='All Submited Locations') class="active" @endif>
+          <a href="{{url('AllSubmitedLocationList')}}">
+            <i class="fa fa-align-justify"></i> <span>All Location</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
 
 
 
@@ -297,9 +216,6 @@ width: 50%;
             <i class="fa fa-clipboard"></i> <span>Blog</span>
           </a>
         </li>
-
-
-
 
       </ul>
     </section>

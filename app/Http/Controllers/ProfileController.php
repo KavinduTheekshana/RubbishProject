@@ -112,12 +112,13 @@ class ProfileController extends Controller
             $data=array(
               'name' => $users->name,
               'gender'=>$users->gender,
+              'birthday'=>$users->birthday,
               'city'=>$users->city,
               'suburb'=> $users->suburb,
             );
             users::where('id',$id)->update($data);
        $users->update();
-       return redirect('editprofile')->with('status', 'Profile Update Sucessfully');
+       return redirect()->back()->with('status', 'Profile Update Sucessfully');
     }
 
 
@@ -135,7 +136,7 @@ class ProfileController extends Controller
             );
             users::where('id',$id)->update($data);
             $users->update();
-        return redirect('editprofile')->with('status2', 'Password Update Sucessfully');
+        return redirect()->back()->with('status2', 'Password Update Sucessfully');
     }
 
 
@@ -160,7 +161,7 @@ class ProfileController extends Controller
             );
             users::where('id',$id)->update($data);
        $users->update();
-        return redirect('editprofile')->with('status3', 'Profile Picture Update Sucessfully');
+        return redirect()->back()->with('status3', 'Profile Picture Update Sucessfully');
     }
 
 

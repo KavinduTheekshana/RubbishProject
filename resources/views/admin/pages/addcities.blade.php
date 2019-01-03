@@ -73,7 +73,6 @@
                 <tr>
                   <th>ID</th>
                   <th>City</th>
-                  <th>Totel Members</th>
                 </tr>
                 </thead>
                 @foreach($citys as $city)
@@ -81,7 +80,6 @@
                 <tr>
                   <td>{{$city->city_id}}</td>
                   <td>{{$city->city_name}}</td>
-                  <td>{{count($cityMemberCount)}}</td>
                 </tr>
                 @endforeach
                 </tfoot>

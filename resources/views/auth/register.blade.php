@@ -82,7 +82,7 @@
       <div class="col-half">
         <h4>City</h4>
         <div class="input-group">
-          <input class="input100" name="city" type="text" placeholder="Your City" required/>
+          <input class="input100" name="city" type="text" placeholder="Your City" required/>          
         </div>
       </div>
       <div class="col-half">

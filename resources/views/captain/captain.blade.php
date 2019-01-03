@@ -1,4 +1,4 @@
-@extends('layouts.Volunteer')
+@extends('layouts.captain')
 
 @section('content')
 

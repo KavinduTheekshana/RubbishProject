@@ -24,7 +24,7 @@
                    @endif</p>
 							<div class="date">
 								<a ><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('d-M-Y', strtotime($slider->publish_date)) }}</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 							</div>
 						</div>
 					</div>
@@ -58,7 +58,7 @@
                          @endif</p>
 										<div class="date">
 											<a><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('d-M-Y', strtotime($post->publish_date)) }}</a>
-											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 										</div>
 									</div>
                       </div>
@@ -102,36 +102,23 @@
                                   can report about thrown away garbage to the CMC and CMC collect them.</p>
                                 <div class="br"></div>
                             </aside>
+
                             <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title">Popular Posts</h3>
+                                <h3 class="widget_title">Recent Posts</h3>
+                                @foreach($posts as $posts)
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                    <img style="width:50px" src="{{$posts->post_image}}" alt="post">
                                     <div class="media-body">
-                                        <a href="blog-details.html"><h3>Space The Final Frontier</h3></a>
-                                        <p>02 Hours ago</p>
+                                        <a href="viewpost/{{$posts->postid}}"><h3>{!! substr(strip_tags($posts->post_title), 0, 200) !!}
+                                          @if (strlen(strip_tags($post->post_title)) > 200)
+                                               ...
+                                             @endif</h3></a>
+                                        <p>{{ date('d-M-Y', strtotime($posts->publish_date)) }}</p>
                                     </div>
                                 </div>
-                                <div class="media post_item">
-                                    <img src="img/blog/popular-post/post2.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>The Amazing Hubble</h3></a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/blog/popular-post/post3.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Astronomy Or Astrology</h3></a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/blog/popular-post/post4.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Asteroids telescope</h3></a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
+                                @endforeach
+
+
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget">

@@ -44,7 +44,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMjwyKg-mHUw2I6fNvJm3NrlxF_hBYS_M&callback=initMap">
     </script>
 
                 </div>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="info_item">
                                 <i class="lnr lnr-envelope"></i>
-                                <h6><a>munici@slt.lk</a></h6>
+                                <h6><a>cmcscs@cmb.lk</a></h6>
                                 <p>Send us your query anytime!</p>
                             </div>
                         </div>

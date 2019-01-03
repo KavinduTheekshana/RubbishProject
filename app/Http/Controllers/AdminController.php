@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use DB;
 use App\users;
 use Auth;
+use App\citie;
 
 class AdminController extends Controller
 {
@@ -21,9 +22,10 @@ class AdminController extends Controller
       $messagecount=DB::table('messages')->where('read_or_not','0')->get();
       $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
       $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+      $cities = citie::all();
 
     return view('admin.Dashboard',['users'=>$data,'members'=>$members,
       'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message,
-      'notification'=>$notification]);
+      'notification'=>$notification,'cities'=>$cities]);
     }
 }

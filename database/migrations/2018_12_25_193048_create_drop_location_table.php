@@ -16,10 +16,16 @@ class CreateDropLocationTable extends Migration
         Schema::create('drop_locations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('address');
+            $table->string('email');
+            $table->string('Title');
             $table->string('city');
+            $table->string('level');
+            $table->string('Description');
+            $table->string('image_Url');
             $table->string('lat');
             $table->string('lng');
+            $table->int('verified_status');
+            $table->int('job_status');
             $table->timestamps();
         });
     }

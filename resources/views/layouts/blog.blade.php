@@ -43,15 +43,6 @@
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav">
 								<li class="nav-item"><a class="nav-link" href="{{url('/')}}">Home</a></li>
-								<li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
-								<li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									</ul>
-								</li>
 								<li class="nav-item"><a class="nav-link" href="{{url('contact')}}">Contact</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right ml-auto">
@@ -83,30 +74,47 @@
                         <div class="single-footer-widget">
                             <h6 class="footer_title">Newsletter</h6>
                             <p>Stay updated with our latest trends</p>
-                            <div id="mc_embed_signup">
-                                <form target="_blank" action="" method="get" class="subscribe_form relative">
+
+                                <form action="{{action('BlogController@Newsletter')}}" method="post" class="subscribe_form relative" enctype="multipart/form-data">
+                                  @csrf
                                     <div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <input name="email" placeholder="Email Address" required type="email">
                                         <button type="submit" class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
                                     </div>
-                                    <div class="mt-10 info"></div>
+                                    <!-- <div class="mt-10 info"></div> -->
+
+                                    @if (count($errors) > 0)
+                                      <div style="color:white;" class="mt-10 danger">
+                                      <strong>Whoops!</strong> There were some problems with your input.<br>
+                                        <ul>
+                                          @foreach ($errors->all() as $error)
+                                            <li style="color:white;">{{ $error }}</li>
+                                          @endforeach
+                                        </ul>
+                                      </div>
+                                    @endif
+
+                                    @if (session('status'))
+                                      <div style="color:white;" class="mt-10 info">
+                                        {{ session('status') }}
+                                      </div>
+                                    @endif
                                 </form>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-footer-widget instafeed">
-                            <h6 class="footer_title">Popular Posts</h6>
+                            <h6 class="footer_title">Recent Posts</h6>
+
                             <ul class="list instafeed d-flex flex-wrap">
-                                <li><img src="img/instagram/Image-01.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-02.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-03.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-04.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-05.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-06.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-07.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-08.jpg" alt=""></li>
+
+                                @foreach($footer as $footer)
+                                <li> <img style="width:58px;height:58px;" src="{{$footer->post_image}}"> </li>
+                                @endforeach
+
                             </ul>
+
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 col-sm-6">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use DB;
 use App\post;
+use App\newsletter;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -21,14 +22,17 @@ class BlogController extends Controller
     $title='Colombo Municipal Council Smart Cleaning Service';
     $posts =DB::table('posts')->orderBy('posts.postid', 'desc')->paginate(4);
     $slider =DB::table('posts')->orderBy('posts.postid', 'desc')->get();
-    return view('blog.index',['posts'=>$posts,'slider'=>$slider,'title'=>$title]);
+    $footer =DB::table('posts')->orderBy('postid', 'desc')->paginate(12);
+    return view('blog.index',['posts'=>$posts,'slider'=>$slider,'title'=>$title,'footer'=>$footer]);
   }
 
   public function viewpost($post_id){
 
     $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['posts.postid'=>$post_id])->get();
+    $posts =DB::table('posts')->orderBy('posts.postid', 'desc')->paginate(4);
     $title='View Post';
-    return view('blog.post',['post'=>$post,'title'=>$title]);
+    $footer =DB::table('posts')->orderBy('postid', 'desc')->paginate(12);
+    return view('blog.post',['post'=>$post,'title'=>$title,'posts'=>$posts,'footer'=>$footer]);
   }
 
   public function deletepost($post_id){
@@ -42,6 +46,17 @@ class BlogController extends Controller
     $profile = DB::table('users')->where(['id'=>$id])->first();
     $editpost=DB::table('posts')->where('postid', $post_id)->first();
     return view('admin.pages.editpostarticle',['profile'=>$profile,'editprofile'=>$editpost,'title'=>$title]);
+  }
+
+  public function Newsletter(Request $request){
+    $this->validate($request, [
+      'email' => ['required', 'string', 'email', 'max:255', 'unique:newsletters,email'],
+     ]);
+     $newsletter = new newsletter();
+     $newsletter->email = $request->input('email');
+     $newsletter->save();
+     return redirect()->back()->with('status', 'Newsletter Subscribe Sucessfully');
+
   }
 
 

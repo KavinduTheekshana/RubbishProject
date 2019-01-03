@@ -19,7 +19,8 @@ class ContactController extends Controller
 
   public function contactView(){
     $title='Contact Us';
-    return view('blog.contact',['title'=>$title]);
+    $footer =DB::table('posts')->orderBy('postid', 'desc')->paginate(12);
+    return view('blog.contact',['title'=>$title,'footer'=>$footer]);
   }
 
   public function contactSave(Request $request){
