@@ -9,24 +9,26 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="Admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="Admin/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/bower_components/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="Admin/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="Admin/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/dist/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="Admin/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/dist/css/skins/_all-skins.min.css')}}">
 
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="{{asset('Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+
 
   <!-- iCheck -->
-  <link rel="stylesheet" href="Admin/plugins/iCheck/flat/blue.css">
+  <link rel="stylesheet" href="{{asset('Admin/plugins/iCheck/flat/blue.css')}}">
 
-  <link rel="stylesheet" href="crop/croppie.css" />
+  <link rel="stylesheet" href="{{asset('crop/croppie.css')}}">
+
 
 
 
@@ -298,20 +300,15 @@ width: 50%;
           </ul>
         </li>
 
-        <li @if($title==='Drop Locations'||$title==='Drop Locations List') class="active" @endif>
+        <li @if($title==='Add Cities') class="active" @endif>
           <a href="{{url('droplocation')}}">
-            <i class="fa fa-map-marker"></i> <span>Drop Locations</span>
+            <i class="fa fa-map-marker"></i> <span>Garbage Spots</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li @if($title==='Drop Locations') class="active" @endif><a href="{{url('droplocation')}}">
-              <i class="fa fa-plus"></i> Add Drop Location</a></li>
-            <li @if($title==='Drop Locations List') class="active" @endif><a href="{{url('droplocationlist')}}">
-              <i class="fa fa-list-ul"></i> List </a></li>
-          </ul>
         </li>
+
+
 
 
         <li @if($title==='Messages') class="active" @endif>

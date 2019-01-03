@@ -92,6 +92,7 @@
               draggable: false,
           });
 
+
           @if($row->level=='law')
             marker{{$row->id}}.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png')
           @elseif($row->level=='medium')
@@ -101,7 +102,7 @@
             @else
             marker{{$row->id}}.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png')
             @endif
-
+            
           marker{{$row->id}}.addListener('click', function() {
           infowindow{{$row->id}}.open(map, marker{{$row->id}});
         });

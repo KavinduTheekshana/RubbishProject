@@ -180,6 +180,14 @@ width: 50%;
           </a>
         </li>
 
+        <li @if($title==='Pendign To Approve') class="active" @endif>
+          <a href="{{url('pendingtoapprove')}}">
+            <i class="fa fa-list-ul"></i> <span>Pending To Approve</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+
 
 
 

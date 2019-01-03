@@ -97,14 +97,14 @@
                   <td>
                     @if($row->job==='Admin')
                     @else
-                    <a href="viewprofile/{{$row->id}}" class="btn btn-primary">View</a>
+                    <a href="../viewprofile/{{$row->id}}" class="btn btn-primary">View</a>
                     @if($row->job==='unblocked'||$row->job==='Staff'||$row->job==='Volunteer'||$row->job==='Captain')
                     <a href="block/{{$row->id}}" type="button" class="btn btn-warning">&nbsp&nbspBlock&nbsp&nbsp</a>
                     @elseif($row->job==='blocked')
                     <a href="unblock/{{$row->id}}" type="button" title="If You Want Unblock,Please Add Job Type" class="btn btn-default" disabled>BLOCKED</a>
                     @endif
                     <span><a  type="button" data-toggle="modal" data-target="#modal-danger" class="btn btn-danger remove">Delete</a>
-                      
+
                       <div class="modal modal-danger fade" id="modal-danger">
                         <div class="modal-dialog">
                           <div class="modal-content">

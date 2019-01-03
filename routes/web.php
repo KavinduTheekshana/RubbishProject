@@ -99,6 +99,8 @@ Route::group(['middleware' => 'revalidate'], function()
   //admin route post
     Route::post('/addCategory', 'categoryController@addcategory');
 
+    Route::post('/savespot', 'AdminController@savespot');
+
     Route::post('/addProfile', 'ProfileController@addProfile');
 
     Route::post('/updateProfile', 'ProfileController@updateProfile');
@@ -122,7 +124,12 @@ Route::group(['middleware' => 'revalidate'], function()
     Route::post('/request', 'BlockedController@request');
 
 
-
+    //staff Routes
+      Route::get('staffAllSubmitedLocationList','StaffController@staffAllSubmitedLocationList');
+      Route::get('markascompletejon/{id}', 'StaffController@markascompletejon');
+      Route::get('markasnotcompletejon/{id}', 'StaffController@markasnotcompletejon');
+      Route::get('staffditprofile','StaffController@staffditprofile');
+      Route::get('staffprofile','StaffController@getStaffView');
 
 
 //captain Routes
@@ -131,6 +138,13 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::get('CaptainAllSubmitedLocationList','CaptainController@CaptainAllSubmitedLocationList');
   Route::get('viewlocationcaptain/{id}', 'CaptainController@viewlocationcaptain');
   Route::get('deletelocationcaptain/{id}', 'CaptainController@deletelocation');
+  Route::get('deletelocationcaptainRedirectAllLocation/{id}', 'CaptainController@deletelocationcaptainRedirectAllLocation');
+  Route::get('Verifiedlocationcaptain/{id}', 'CaptainController@Verifiedlocationcaptain');
+  Route::get('NotVerifiedlocationcaptain/{id}', 'CaptainController@NotVerifiedlocationcaptain');
+  Route::get('changeleveltolow/{id}', 'CaptainController@changeleveltolow');
+  Route::get('changeleveltomedium/{id}', 'CaptainController@changeleveltomedium');
+  Route::get('changeleveltohigh/{id}', 'CaptainController@changeleveltohigh');
+  Route::get('pendingtoapprove','CaptainController@pendingtoapprove');
 
 
   //Volunteer Routes
@@ -143,6 +157,7 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::post('/updateLocation', 'VolunteerController@updateLocation')->middleware('Volunteer');
   Route::get('volunteerprofile','VolunteerController@volunteerprofile')->middleware('Volunteer');
   Route::get('volunteereditprofile','VolunteerController@volunteereditprofile')->middleware('Volunteer');
+  Route::get('CompletedLocationList','VolunteerController@CompletedLocationList')->middleware('Volunteer');
 
 
 
@@ -151,6 +166,7 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::get('viewpost/{ids}', 'BlogController@viewpost');
   Route::get('deletepost/{ids}', 'BlogController@deletepost');
   Route::get('contact','ContactController@contactView');
+  Route::get('spots','BlogController@spots');
   Route::post('/Newsletter', 'BlogController@Newsletter');
 
 

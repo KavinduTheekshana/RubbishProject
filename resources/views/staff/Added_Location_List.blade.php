@@ -1,4 +1,4 @@
-@extends('layouts.captain')
+@extends('layouts.staff')
 
 @section('content')
     <section class="content-header">
@@ -70,13 +70,11 @@
                   <th>Title</th>
                   <th>City</th>
                   <th>Discription</th>
+                  <th>Lat & Lng</th>
                   <th>Date</th>
                   <th>View</th>
-                  <th>Verified Status</th>
                   <th>Level</th>
                   <th>Job Status</th>
-
-                  <th>Delete</th>
                 </tr>
               </thead>
 
@@ -94,49 +92,16 @@
                     @if (strlen(strip_tags($row->description)) > 50)
                          ...
                        @endif</td>
+                         <td>{{$row->lat}}<br>{{$row->lng}}</td>
                   <td>{{ date('d-M-Y', strtotime($row->created_at)) }}</td>
                   <td>
                       <a href="viewlocationcaptain/{{$row->id}}"  class="btn btn-default" ><i class="fa fa-eye"></i></a>
                   </td>
-                  <td>
-                    @if($row->job_status===1)
 
-                    @if($row->verified_status===0)
-                      <a  class="btn btn-danger" >Not Verified</a>
-                    @elseif($row->verified_status===1)
-                      <a  class="btn btn-success disabled">&nbsp &nbsp Verified &nbsp &nbsp</a>
-                    @endif</td>
-
-                    @elseif($row->job_status===0)
-
-                    @if($row->verified_status===0)
-                      <a href="Verifiedlocationcaptain/{{$row->id}}" class="btn btn-danger" >Not Verified</a>
-                    @elseif($row->verified_status===1)
-                      <a href="NotVerifiedlocationcaptain/{{$row->id}}" class="btn btn-success">&nbsp &nbsp Verified &nbsp &nbsp</a>
-                    @endif
-                    @endif
 
 
                     <td>
-                      @if($row->job_status===1)
-                      <div class="dropdown">
-                        <button @if($row->level==='low')
-                              class="btn btn-info dropdown-toggle disabled" type="button" data-toggle="dropdown">&nbsp &nbsp Low &nbsp &nbsp
-                            @elseif($row->level==='medium')
-                              class="btn btn-primary dropdown-toggle disabled" type="button" data-toggle="dropdown">Medium
-                            @elseif($row->level==='high')
-                              class="btn btn-warning dropdown-toggle disabled" type="button" data-toggle="dropdown">&nbsp &nbsp High  &nbsp
-                            @endif
 
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                            <li><a >Low</a></li>
-                            <li><a >Medium</a></li>
-                            <li><a >High</a></li>
-                          </ul>
-                        </div>
-                        @elseif($row->job_status===0)
-                        <div class="dropdown">
                           <button @if($row->level==='low')
                                 class="btn btn-info dropdown-toggle " type="button" data-toggle="dropdown">&nbsp &nbsp Low &nbsp &nbsp
                               @elseif($row->level==='medium')
@@ -144,35 +109,20 @@
                               @elseif($row->level==='high')
                                 class="btn btn-warning dropdown-toggle " type="button" data-toggle="dropdown">&nbsp &nbsp High  &nbsp
                               @endif
-
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                              <li><a href="changeleveltolow/{{$row->id}}">Low</a></li>
-                              <li><a href="changeleveltomedium/{{$row->id}}">Medium</a></li>
-                              <li><a href="changeleveltohigh/{{$row->id}}">High</a></li>
-                            </ul>
-                          </div>
-                        @endif
                     </td>
 
 
                       <td>
                         @if($row->job_status===0)
-                          <a  class="btn btn-warning" >NOT COMPLETED</a>
+                          <a href="markascompletejon/{{$row->id}}" class="btn btn-warning" >NOT COMPLETED</a>
                         @elseif($row->job_status===1)
-                          <a  class="btn btn-success">&nbsp &nbsp COMPLETED &nbsp &nbsp &nbsp</a>
+                          <a href="markasnotcompletejon/{{$row->id}}" class="btn btn-success">&nbsp &nbsp COMPLETED &nbsp &nbsp &nbsp</a>
                         @endif</td>
 
 
 
-                        <td>
-                          @if($row->job_status===0)
-                            <a data-toggle="modal" data-target="#modal-danger" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
-                          @elseif($row->job_status===1)
-                            <a class="btn btn-danger disabled" ><i class="fa fa-trash" ></i></a>
-                          @endif</td>
 
-                        </td>
+
 
 
 

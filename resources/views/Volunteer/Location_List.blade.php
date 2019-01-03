@@ -85,9 +85,15 @@
                 <tr>
                   <td>{{$row->id}}</td>
                   <td><div class="avatar"><img src="{{$row->image_url}}"></div></td>
-                  <td>{{$row->title}}</td>
+                  <td>{!! substr(strip_tags($row->title), 0, 50) !!}
+                    @if (strlen(strip_tags($row->title)) > 50)
+                         ...
+                       @endif</td>
                   <td>{{$row->city}}</td>
-                  <td>{{$row->description}}</td>
+                  <td>{!! substr(strip_tags($row->description), 0, 50) !!}
+                    @if (strlen(strip_tags($row->description)) > 50)
+                         ...
+                       @endif</td>
                   <td>{{$row->lat}}<br>{{$row->lng}}</td>
                   <td>{{ date('d-M-Y | H:i:s', strtotime($row->created_at)) }}</td>
                   <td>
@@ -98,8 +104,8 @@
                     @endif</td>
 
                     <td>
-                      @if($row->level==='law')
-                        <a  class="btn btn-info" >&nbsp &nbsp Law &nbsp &nbsp</a>
+                      @if($row->level==='low')
+                        <a  class="btn btn-info" >&nbsp &nbsp Low &nbsp &nbsp</a>
                       @elseif($row->level==='medium')
                         <a  class="btn btn-primary">Medium</a>
                       @elseif($row->level==='high')
@@ -130,7 +136,7 @@
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span></button>
-                                  <h4 class="modal-title">Delete Location</h4>
+                                  <h4 class="modal-title">{{$row->title}} Delete Location</h4>
                                 </div>
                                 <div class="modal-body">
                                   <p>Are You Sure the Delete This Location?&hellip;</p>

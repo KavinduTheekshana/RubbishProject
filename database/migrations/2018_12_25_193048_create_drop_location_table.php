@@ -26,6 +26,7 @@ class CreateDropLocationTable extends Migration
             $table->string('lng');
             $table->int('verified_status');
             $table->int('job_status');
+            $table->string('doneby')->nullable();
             $table->timestamps();
         });
     }

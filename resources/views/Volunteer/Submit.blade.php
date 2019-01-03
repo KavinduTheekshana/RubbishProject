@@ -69,7 +69,7 @@
             <div class="col-xs-2">
               <label for="exampleInputEmail1">Level</label>
               <select class="form-control" name="level">
-                <option value="law">Law</option>
+                <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>

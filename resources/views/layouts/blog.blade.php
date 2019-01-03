@@ -44,6 +44,7 @@
 							<ul class="nav navbar-nav menu_nav">
 								<li class="nav-item"><a class="nav-link" href="{{url('/')}}">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="{{url('contact')}}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('spots')}}">Garbage Spots</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right ml-auto">
                 <li class="nav-item"><a class="navbar-right nav-link" href="{{url('/login')}}">login</a></li>

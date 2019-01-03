@@ -1,4 +1,4 @@
-@extends('layouts.Volunteer')
+@extends('layouts.captain')
 
 @section('content')
 <section class="content-header">
@@ -91,6 +91,7 @@
               map: map,
               draggable: false,
           });
+
 
           @if($row->level=='law')
             marker{{$row->id}}.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png')

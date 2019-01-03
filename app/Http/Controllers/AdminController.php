@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use DB;
 use App\users;
+use App\spot;
 use Auth;
 use App\citie;
 
@@ -23,9 +24,24 @@ class AdminController extends Controller
       $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
       $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
       $cities = citie::all();
+      $location=DB::table('drop_locations')->where('job_status','0')->get();
 
     return view('admin.Dashboard',['users'=>$data,'members'=>$members,
       'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message,
-      'notification'=>$notification,'cities'=>$cities]);
+      'notification'=>$notification,'cities'=>$cities,'location'=>$location]);
+    }
+
+    public function savespot(Request $request){
+      $this->validate($request, [
+        'lat' => ['required', 'string'],
+        'lng' => ['required', 'string'],
+       ]);
+
+       $spot = new spot();
+       $spot->lat = $request->input('lat');
+        $spot->lng = $request->input('lng');
+       $spot->save();
+       return redirect()->back()->with('status', 'Garbage Spot Added Sucessfully');
+
     }
 }

@@ -21,20 +21,21 @@ class VolunteerController extends Controller
   public function volunteerprofile(){
 
     $id =Auth::user()->id;
+    $email =Auth::user()->email;
     $name =Auth::user()->name;
     $title=$name;
     $profile = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$id])->first();
 
-    $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->
-    where(['user_id'=>$id])->orderBy('posts.postid', 'desc')->paginate(4);
 
     $messagecount=DB::table('messages')->where('read_or_not','0')->get();
     $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
     $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
 
-    return view('volunteer/volunteerprofile',['profile'=>$profile,'post'=>$post,'title'=>$title,
-    'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification]);
+    $location=DB::table('drop_locations')->where([['job_status','1'],['email',$email]])->get();
+
+    return view('volunteer/volunteerprofile',['profile'=>$profile,'title'=>$title,
+    'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification,'location'=>$location]);
   }
 
       public function Submit(){
@@ -114,6 +115,7 @@ class VolunteerController extends Controller
             }
 
             public function deletelocation($id){
+              return $id;
                 DB::table('drop_locations')->where('id', $id)->delete();
                 return redirect()->back()->with('status', 'Location Delete Sucessfully');
             }
@@ -131,7 +133,7 @@ class VolunteerController extends Controller
 
                 $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
 
-                $location=DB::table('drop_locations')->get();
+                $location=DB::table('drop_locations')->where('job_status','0')->get();
 
               return view('volunteer/AllSubmitedLocationList',['users'=>$data,'members'=>$members,
                 'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,
@@ -165,9 +167,30 @@ class VolunteerController extends Controller
 
                       $cities = citie::all();
 
+
                       return view('volunteer/volunteereditprofile',['profile'=>$profile,'title'=>$title,
                       'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities,'notification'=>$notification]);
                     }
+
+                    public function CompletedLocationList(){
+                      $title='Completed Locations';
+
+                      $data = DB::table('users')->count();
+                      $members = DB::table('users')->orderBy('id', 'desc')->paginate(8);
+                      $id =Auth::user()->id;
+                      $profile = DB::table('users')->where(['id'=>$id])->first();
+                      $post =DB::table('posts')->orderBy('postid', 'desc')->paginate(4);
+                      $messagecount=DB::table('messages')->where('read_or_not','0')->get();
+                      $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
+
+                      $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
+
+                      $location=DB::table('drop_locations')->where('job_status','1')->get();
+
+                    return view('volunteer/CompletedLocationList',['users'=>$data,'members'=>$members,
+                      'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,
+                      'message'=>$message,'notification'=>$notification,'location'=>$location]);
+                        }
 
 
 }

@@ -1,4 +1,4 @@
-@extends('layouts.Volunteer')
+@extends('layouts.captain')
 
 @section('content')
 <section class="content-header">
@@ -54,11 +54,11 @@
                                 '<h5>{!! substr(strip_tags($row->description), 0, 50) !!}'+
                                   '@if (strlen(strip_tags($row->description)) > 50)...@endif</h5>'+
                                   '<br>'+
-                                '  @if($row->verified_status===0)'+
-                                    '<a  class="btn btn-danger" >Not Verified</a>'+
+                                  '@if($row->verified_status===0)'+
+                                    '<a href="Verifiedlocationcaptain/{{$row->id}}" class="btn btn-danger" >Not Verified</a>'+
                                   '@elseif($row->verified_status===1)'+
-                                    '<a  class="btn btn-success">&nbsp &nbsp Verified &nbsp &nbsp</a>'+
-                                '  @endif</td>'+
+                                    '<a href="NotVerifiedlocationcaptain/{{$row->id}}" class="btn btn-success">&nbsp &nbsp Verified &nbsp &nbsp</a>'+
+                                '  @endif'+
                                 '&nbsp'+
                                 '@if($row->level==='low')'+
                                   '<a  class="btn btn-info" >&nbsp &nbsp Low &nbsp &nbsp</a>'+

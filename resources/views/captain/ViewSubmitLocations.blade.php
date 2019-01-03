@@ -104,6 +104,50 @@
           <!-- /.box-body -->
 
           <div class="box-footer">
+            @if($location->job_status===1)
+
+            @if($location->verified_status===0)
+              <a  class="btn btn-danger" >Not Verified</a>
+            @elseif($location->verified_status===1)
+              <a  class="btn btn-success disabled">&nbsp &nbsp Verified &nbsp &nbsp</a>
+            @endif</td>
+
+            @elseif($location->job_status===0)
+
+            @if($location->verified_status===0)
+              <a href="../Verifiedlocationcaptain/{{$location->id}}" class="btn btn-danger" >Not Verified</a>
+            @elseif($location->verified_status===1)
+              <a href="../NotVerifiedlocationcaptain/{{$location->id}}" class="btn btn-success">&nbsp &nbsp Verified &nbsp &nbsp</a>
+            @endif
+            @endif
+
+            @if($location->job_status===0)
+              <a data-toggle="modal" data-target="#modal-danger" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
+            @elseif($location->job_status===1)
+              <a class="btn btn-danger disabled" ><i class="fa fa-trash" ></i></a>
+            @endif
+          </div>
+
+
+          <div class="modal modal-danger fade" id="modal-danger">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Delete Location</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Are You Sure the Delete This Location?&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline" data-dismiss="modal">Close</button>
+                  <a href="../deletelocationcaptainRedirectAllLocation/{{$location->id}}" type="button" class="btn btn-outline">Yes I want Delete</a>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
           </div>
         </form>
 

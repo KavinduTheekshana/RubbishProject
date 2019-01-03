@@ -48,96 +48,80 @@
             </div>
           @endif
 
+          <form role="form" action="{{action('AdminController@savespot')}}" method="POST" enctype="multipart/form-data" >
+            @csrf
 
 
-          <div style="height: 520px; width:100% " id="map" height="460px" width="100%"></div>
+            <div class="box-body">
+              <div class="row">
+                  <div class="row">
+                <div class="col-xs-3">
+                  <label>Latitude</label>
+                  <input type="text" name="lat" id="lat" class="form-control" value="{{ old('lat') }}" readonly>
+                </div>
+              <div class="col-xs-3">
+                <label for="exampleInputEmail1">Longitude</label>
+                <input type="text" name="lng" id="lng" class="form-control" value="{{ old('lng') }}" readonly>
+              </div>
+            </div>
 
-          <div  id="form"  >
-            <table style="margin:10px;">
-            <tr><td>Location Name:</td> <td><input  type='text' id='name'/> </td> </tr>
-            <tr><td>Address:</td> <td><input  type='text' id='address'/> </td> </tr>
-            <tr><td>City:</td> <td><input  type='text' id='city'/> </td> </tr>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Map</label>
+              <div id="map" style="height: 500px; width: 100%;"></div>
+            </div>
+            </div>
+            <!-- /.box-body -->
 
-             <tr><td></td><td><input class="btn btn-success" type='button' value='Save' onclick='saveData()'/></td></tr>
-            </table>
-          </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+
           <!-- <div id="message">Location saved</div> -->
-
           <script>
-            var map;
-            var marker;
-            var infowindow;
-            var messagewindow;
-
-            function initMap() {
-              var Colombo = {lat: 6.9271, lng: 79.8612};
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: Colombo,
-                zoom: 13
-              });
-
-              infowindow = new google.maps.InfoWindow({
-                content: document.getElementById('form')
-              });
-
-              messagewindow = new google.maps.InfoWindow({
-                content: document.getElementById('message')
-              });
-
-              google.maps.event.addListener(map, 'click', function(event) {
-                marker = new google.maps.Marker({
-                  position: event.latLng,
-                  map: map
-                });
-
-
-                google.maps.event.addListener(marker, 'click', function() {
-                  infowindow.open(map, marker);
-                });
-              });
-            }
-
-            function saveData() {
-              var name = escape(document.getElementById('name').value);
-              var address = escape(document.getElementById('address').value);
-              var city = document.getElementById('city').value;
-              var latlng = marker.getPosition();
-              var url = '/save?name=' + name + '&address=' + address +
-                        '&city=' + city + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
-
-              downloadUrl(url, function(data, responseCode) {
-
-                if (responseCode == 200 && data.length <= 1) {
-                  infowindow.close();
-                  messagewindow.open(map, marker);
+                var map;
+                function initAutocomplete(){
+                    console.log(document.getElementById('map'));
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: 6.9271, lng: 79.8612},
+                        zoom: 13
+                    });
+                    var marker = new google.maps.Marker({
+                        position: {
+                            lat: 6.9271,
+                            lng: 79.8612
+                        },
+                        map: map,
+                        draggable: true
+                    });
+          //            document.getElementById('lat').value = marker.getPosition().lat();
+          //            document.getElementById('lng').value = marker.getPosition().lng();
+                    var input = document.getElementById('pac-input');
+                    var searchBox = new google.maps.places.SearchBox(input);
+                    google.maps.event.addListener(searchBox, 'places_changed',function(){
+                        var places = searchBox.getPlaces();
+                        var bounds = new google.maps.LatLngBounds();
+                        var i, place;
+                        for (i=0; place=places[i]; i++) {
+                            bounds.extend(place.geometry.location);
+                            marker.setPosition(place.geometry.location);
+                        }
+                        map.fitBounds(bounds);
+                        map.setZoom(15);
+                    });
+                    google.maps.event.addListener(marker, 'position_changed', function(){
+                        var lat = marker.getPosition().lat();
+                        var lng = marker.getPosition().lng();
+                        document.getElementById('lat').value = lat;
+                        document.getElementById('lng').value = lng;
+                    });
                 }
-              });
-            }
-
-            function downloadUrl(url, callback) {
-              var request = window.ActiveXObject ?
-                  new ActiveXObject('Microsoft.XMLHTTP') :
-                  new XMLHttpRequest;
-
-              request.onreadystatechange = function() {
-                if (request.readyState == 4) {
-                  request.onreadystatechange = doNothing;
-                  callback(request.responseText, request.status);
-                }
-              };
-
-              request.open('GET', url, true);
-              request.send(null);
-            }
-
-            function doNothing () {
-            }
+            </script>
 
           </script>
-          <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMjwyKg-mHUw2I6fNvJm3NrlxF_hBYS_M&callback=initMap">
-          </script>
-
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMjwyKg-mHUw2I6fNvJm3NrlxF_hBYS_M&libraries=places&callback=initAutocomplete"
+                    async defer></script>
 
 
 

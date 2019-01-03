@@ -95,19 +95,9 @@ width: 50%;
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
 
-
-
-
-
-
-
-
-
-
-
-
-
+          <!-- Notifications: style can be found in dropdown.less -->
 
           <!-- Tasks: style can be found in dropdown.less -->
 
@@ -160,24 +150,18 @@ width: 50%;
         </div>
       </div>
       <!-- search form -->
-      <!-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> -->
+
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
 
+
+
+
         <li @if($title===($profile->name)) class="active" @endif>
-          <a href="{{url('volunteerprofile')}}">
+          <a href="{{url('staffprofile')}}">
             <i class="fa fa-user-circle-o"></i> <span>Profile</span>
             <span class="pull-right-container">
             </span>
@@ -185,37 +169,18 @@ width: 50%;
         </li>
 
 
-        <li @if($title==='Submit Location') class="active" @endif>
-          <a href="{{url('Submit_Location')}}">
-            <i class="fa fa-map-marker"></i> <span>Submit Location</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
 
-        <li @if($title==='Submited Locations List') class="active" @endif>
-          <a href="{{url('SubmitedLocationList')}}">
-            <i class="fa fa-list-ul"></i> <span>Location List</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
+
 
         <li @if($title==='All Submited Locations') class="active" @endif>
-          <a href="{{url('AllSubmitedLocationList')}}">
-            <i class="fa fa-align-justify"></i> <span>All Location</span>
+          <a href="{{url('staffAllSubmitedLocationList')}}">
+            <i class="fa fa-list-ul"></i> <span>Location List to Clean</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
 
-        <li @if($title==='Completed Locations') class="active" @endif>
-          <a href="{{url('CompletedLocationList')}}">
-            <i class="fa fa-align-justify"></i> <span>Completed Locations</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
+
 
 
 
@@ -224,6 +189,9 @@ width: 50%;
             <i class="fa fa-clipboard"></i> <span>Blog</span>
           </a>
         </li>
+
+
+
 
       </ul>
     </section>

@@ -59,6 +59,18 @@ class BlogController extends Controller
 
   }
 
+  public function spots(){
+
+
+    $title='Garbage Spots';
+    $footer =DB::table('posts')->orderBy('postid', 'desc')->paginate(12);
+
+    $location=DB::table('spots')->get();
+
+
+    return view('blog.GarbageSpots',['title'=>$title,'footer'=>$footer,'location'=>$location]);
+  }
+
 
 
 
