@@ -1,4 +1,4 @@
-<p align="center"><img src="public\blog\img\logo2.png"></p>
+<p align="center"><img src="public\blog\img\logo2.jpg"></p>
 
 
 
@@ -105,7 +105,7 @@ some details such as name, e-mail address etc.
 
 
 <div>
-<img src="public\Screen Shot\3.png"><br>
+<img src="public\Screen Shot\3.jpg"><br>
 This is the login page. Members can log into the system using their username and password if he/she
 already registered member. If any member forgets him/ her password he/ she can reset the password
 clicking on Forgot Password.
@@ -115,7 +115,7 @@ clicking on Forgot Password.
 
 
 <div>
-<img src="public\Screen Shot\19.png"><br>
+<img src="public\Screen Shot\19.jpg"><br>
 This is the main dashboard of Admin. Admin can see list of pending to clean, number of members,
 numbers of points already cleaned, number of volunteers to have approve, latest registered member
 list, list of posted articles.
@@ -124,7 +124,7 @@ list, list of posted articles.
 
 
 <div>
-<img src="public\Screen Shot\20.png"><br>
+<img src="public\Screen Shot\20.jpg"><br>
 Using this UI Admin can change job type of members, can block members profile, can view members
 profile and can delete member profile.
 </div>
@@ -133,7 +133,7 @@ profile and can delete member profile.
 
 
 <div>
-<img src="public\Screen Shot\21.png"><br>
+<img src="public\Screen Shot\21.jpg"><br>
 Using above UI Admin can add users to the system and can categories them as volunteer, captain or
 staff. But admin cannot add another admin because the system has only one admin.
 </div>
@@ -142,7 +142,7 @@ staff. But admin cannot add another admin because the system has only one admin.
 
 
 <div>
-<img src="public\Screen Shot\22.png"><br>
+<img src="public\Screen Shot\22.jpg"><br>
 Amin can post articles about recycling garbage and that articles shows on the above page in
 descending g order. Admin can delete or update that posted articles as well.
 </div>
@@ -151,7 +151,7 @@ descending g order. Admin can delete or update that posted articles as well.
 
 
 <div>
-<img src="public\Screen Shot\23.png"><br>
+<img src="public\Screen Shot\23.jpg"><br>
 Using the above UI admin can post articles after filling required details. In here we have used text
 editor.
 </div>
@@ -160,7 +160,7 @@ editor.
 
 
 <div>
-<img src="public\Screen Shot\24.png"><br>
+<img src="public\Screen Shot\24.jpg"><br>
 On the above UI shows e-mail service. We try to make email service among the members. This is
 already work email service among the admins. In this case we have to develop this is in the future.
 </div>
@@ -169,14 +169,14 @@ already work email service among the admins. In this case we have to develop thi
 
 
 <div>
-<img src="public\Screen Shot\25.png"><br>
+<img src="public\Screen Shot\25.jpg"><br>
 Admin can add garbage collect spots on the map using this UI and anyone can see those spots
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\26.png"><br>
+<img src="public\Screen Shot\26.jpg"><br>
 In every site has contact page, we also have contact page in the above UI shows it. Anyone can send
 messages to us and admin can read that messages using this UI.
 </div>
@@ -184,14 +184,14 @@ messages to us and admin can read that messages using this UI.
 
 
 <div>
-<img src="public\Screen Shot\27.png"><br>
+<img src="public\Screen Shot\27.jpg"><br>
 From this UI shows notifications such as number of unread messages
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\4.1.png"><br>
+<img src="public\Screen Shot\4.1.jpg"><br>
 If volunteer needs to edit him/her profile him/her can use this page and change profile picture, password
 etc. But volunteer cannot change him/her job title.
 </div>
@@ -199,7 +199,7 @@ etc. But volunteer cannot change him/her job title.
 
 
 <div>
-<img src="public\Screen Shot\5.png"><br>
+<img src="public\Screen Shot\5.jpg"><br>
 Volunteer can report about thrown away garbage using this page and he/she can upload picture and also
 location on this page after can submit it.
 </div>
@@ -207,14 +207,14 @@ location on this page after can submit it.
 
 
 <div>
-<img src="public\Screen Shot\6.png"><br>
+<img src="public\Screen Shot\6.jpg"><br>
 On this page shows location list of submitted by volunteer
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\7.1.png"><br>
+<img src="public\Screen Shot\7.1.jpg"><br>
 Volunteer can report incidents about throwing away garbage and volunteer can add garbage volume and
 can add pictures and especially need to submit location also.
 </div>
@@ -222,7 +222,7 @@ can add pictures and especially need to submit location also.
 
 
 <div>
-<img src="public\Screen Shot\7.png"><br>
+<img src="public\Screen Shot\7.jpg"><br>
 Volunteer can check all locations submitted by him/ herself on the map using this page. Volunteer can
 remove it if him/ her needs.
 </div>
@@ -230,14 +230,14 @@ remove it if him/ her needs.
 
 
 <div>
-<img src="public\Screen Shot\8.png"><br>
+<img src="public\Screen Shot\8.jpg"><br>
 On this page shows completed cleaned places by CMCSCS.
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\10.png"><br>
+<img src="public\Screen Shot\10.jpg"><br>
 If volunteer delete a location then appear message and ask “are you sure the delete this location” and we
 confirmed volunteer need to delete it surely
 </div>
@@ -245,42 +245,42 @@ confirmed volunteer need to delete it surely
 
 
 <div>
-<img src="public\Screen Shot\11.png"><br>
+<img src="public\Screen Shot\11.jpg"><br>
 This page shows to report location thrown away garbage
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\12.png"><br>
+<img src="public\Screen Shot\12.jpg"><br>
 This is the profile of User
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\13.png"><br>
+<img src="public\Screen Shot\13.jpg"><br>
 On this page shows location list of submitted by volunteer
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\14.png"><br>
+<img src="public\Screen Shot\14.jpg"><br>
 The above UI shows map and on the map has marker, that marker point thrown away garbage place.
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\15.png"><br>
+<img src="public\Screen Shot\15.jpg"><br>
 Captain can mark level of garbage if volunteer add it wrongly.
 </div>
 <br><br>
 
 
 <div>
-<img src="public\Screen Shot\16.png"><br>
+<img src="public\Screen Shot\16.jpg"><br>
 This is captain view. In there is shows pending list to have approved by captain. On the map there
 have some markers with different colors and from that markers shows level of garbage. Red color
 shows in that place have lot of garbage and green color shows medium, and yellow color shows low
@@ -290,7 +290,7 @@ garbage level.
 
 
 <div>
-<img src="public\Screen Shot\17.png"><br>
+<img src="public\Screen Shot\17.jpg"><br>
 This is profile of a user. User log in to the system will appear this UI. If user needs to edit him/ her
 profile then user can change it on this page.
 </div>
@@ -298,7 +298,7 @@ profile then user can change it on this page.
 
 
 <div>
-<img src="public\Screen Shot\18.png"><br>
+<img src="public\Screen Shot\18.jpg"><br>
 Staff member can see garbage locations on this page and remove garbage from that place. After
 removing that garbage member can mark job status as completed. After mark it as completed then all
 the job status of members displays updated as completed.
