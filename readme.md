@@ -55,19 +55,257 @@ MySQL used for the database system and in additionally we used two themes such a
 [Admin-LTE](https://adminlte.io/themes/AdminLTE/index.html): used to create admin dashboard and it get from the Github.<br>
 [Fantom Blog Theame](https://colorlib.com/preview/theme/fantom/): used to create blog
 
+## Setup
+
+<br>
+<ul>
+<li> Clone: <code> https://github.com/KavinduTheekshana/RubbishProject.git</code></li>
+</ul>
+<br>
+
 
 
 ## User Story
 <p align="center"><img src="public\Screen Shot\userstory.jpg"></p>
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Interfaces
+<div>
+<img src="public\Screen Shot\1.jpg"><br>
+This is the first view of the web site. If anyone log into the site they can see this page at the beginning.
+Some articles about garbage throwing including in there, anyone can see those articles.
+</div>
+<br><br>
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div>
+<img src="public\Screen Shot\1.1.jpg"><br>
+This page include contact details and on this page has Send Message button if anyone needs to put a
+complaint or new ideas he/she can send message clicking on that button.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\1.2.jpg"><br>
+This page shows garbage collection spots. Those locations add by admin. Public people can put garbage
+in this area and then garbage trucks collect them.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\2.png"><br>
+If anyone needs to join with us as a volunteer he/she can sign up filling this form. This form required
+some details such as name, e-mail address etc.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\3.png"><br>
+This is the login page. Members can log into the system using their username and password if he/she
+already registered member. If any member forgets him/ her password he/ she can reset the password
+clicking on Forgot Password.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\19.png"><br>
+This is the main dashboard of Admin. Admin can see list of pending to clean, number of members,
+numbers of points already cleaned, number of volunteers to have approve, latest registered member
+list, list of posted articles.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\20.png"><br>
+Using this UI Admin can change job type of members, can block members profile, can view members
+profile and can delete member profile.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\21.png"><br>
+Using above UI Admin can add users to the system and can categories them as volunteer, captain or
+staff. But admin cannot add another admin because the system has only one admin.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\22.png"><br>
+Amin can post articles about recycling garbage and that articles shows on the above page in
+descending g order. Admin can delete or update that posted articles as well.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\23.png"><br>
+Using the above UI admin can post articles after filling required details. In here we have used text
+editor.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\24.png"><br>
+On the above UI shows e-mail service. We try to make email service among the members. This is
+already work email service among the admins. In this case we have to develop this is in the future.
+</div>
+<br><br>
+
+
+
+<div>
+<img src="public\Screen Shot\25.png"><br>
+Admin can add garbage collect spots on the map using this UI and anyone can see those spots
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\26.png"><br>
+In every site has contact page, we also have contact page in the above UI shows it. Anyone can send
+messages to us and admin can read that messages using this UI.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\27.png"><br>
+From this UI shows notifications such as number of unread messages
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\4.1.png"><br>
+If volunteer needs to edit him/her profile him/her can use this page and change profile picture, password
+etc. But volunteer cannot change him/her job title.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\5.png"><br>
+Volunteer can report about thrown away garbage using this page and he/she can upload picture and also
+location on this page after can submit it.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\6.png"><br>
+On this page shows location list of submitted by volunteer
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\7.1.png"><br>
+Volunteer can report incidents about throwing away garbage and volunteer can add garbage volume and
+can add pictures and especially need to submit location also.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\7.png"><br>
+Volunteer can check all locations submitted by him/ herself on the map using this page. Volunteer can
+remove it if him/ her needs.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\8.png"><br>
+On this page shows completed cleaned places by CMCSCS.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\10.png"><br>
+If volunteer delete a location then appear message and ask “are you sure the delete this location” and we
+confirmed volunteer need to delete it surely
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\11.png"><br>
+This page shows to report location thrown away garbage
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\12.png"><br>
+This is the profile of User
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\13.png"><br>
+On this page shows location list of submitted by volunteer
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\14.png"><br>
+The above UI shows map and on the map has marker, that marker point thrown away garbage place.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\15.png"><br>
+Captain can mark level of garbage if volunteer add it wrongly.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\16.png"><br>
+This is captain view. In there is shows pending list to have approved by captain. On the map there
+have some markers with different colors and from that markers shows level of garbage. Red color
+shows in that place have lot of garbage and green color shows medium, and yellow color shows low
+garbage level.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\17.png"><br>
+This is profile of a user. User log in to the system will appear this UI. If user needs to edit him/ her
+profile then user can change it on this page.
+</div>
+<br><br>
+
+
+<div>
+<img src="public\Screen Shot\18.png"><br>
+Staff member can see garbage locations on this page and remove garbage from that place. After
+removing that garbage member can mark job status as completed. After mark it as completed then all
+the job status of members displays updated as completed.
+</div>
+<br><br>
+
+
+## Contact
+
+Feel free to contact me via [Linkedin](https://www.linkedin.com/in/kavindutheekshana/)
