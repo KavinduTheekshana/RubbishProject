@@ -66,7 +66,7 @@
               <div class="box-body">
 
 
-@foreach($location as $location)
+                @foreach($location as $location)
                 <div class="attachment-block clearfix">
                   <img class="attachment-img" src="{{$location->image_url}}" alt="Attachment Image">
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\citie;
 
 class RegisterController extends Controller
 {
@@ -79,5 +80,11 @@ class RegisterController extends Controller
             'suburb' => $data['suburb'],
             'job' =>('Volunteer'),
         ]);
+    }
+
+    public function showRegistrationForm(){
+      $cities = citie::all();
+        return view('auth.register',['cities'=>$cities]);
+
     }
 }

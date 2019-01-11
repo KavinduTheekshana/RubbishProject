@@ -169,7 +169,7 @@ class ProfileController extends Controller
     public function viewprofile($ids){
 
       $id =Auth::user()->id;
-      $email = DB::table('users')->where(['id'=>$id])->first()->email;
+      $email = DB::table('users')->where(['id'=>$ids])->first()->email;
       $profile = DB::table('users')->where(['id'=>$id])->first();
       $user = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$ids])->first();
       $title=$user->name;

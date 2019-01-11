@@ -27,6 +27,7 @@ Route::get('/blocked','BlockedController@getblockedView')->middleware('blocked')
 
 Route::group(['middleware' => 'revalidate'], function()
 {
+
   Route::get('/', 'BlogController@index');
 
   Route::get('/register', function () {
@@ -62,11 +63,11 @@ Route::group(['middleware' => 'revalidate'], function()
 
 
 
-  Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/home', 'HomeController@index')->name('home')->middleware('Admin');
 
-  Route::get('/post', 'PostController@post');
+  Route::get('/post', 'PostController@post')->middleware('Admin');;
 
-  Route::get('/category', 'categoryController@category');
+  Route::get('/category', 'categoryController@category')->middleware('Admin');;
 
   Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
@@ -87,7 +88,7 @@ Route::group(['middleware' => 'revalidate'], function()
 
 
 
-  Route::get('messages','ContactController@messagesview');
+  Route::get('messages','ContactController@messagesview')->middleware('Admin');
 
   Route::get('markAsUnread/{id}', 'ContactController@markAsUnread');
   Route::get('markAsRead/{id}', 'ContactController@markAsRead');
@@ -97,7 +98,7 @@ Route::group(['middleware' => 'revalidate'], function()
 
 
   //admin route post
-    Route::post('/addCategory', 'categoryController@addcategory');
+    Route::post('/addCategory', 'categoryController@addcategory')->middleware('Admin');
 
     Route::post('/savespot', 'AdminController@savespot');
 
@@ -109,19 +110,19 @@ Route::group(['middleware' => 'revalidate'], function()
 
     Route::post('/updateProfilepicture', 'ProfileController@updateProfilepicture');
 
-    Route::post('/searchmember', 'MemberController@searchmember');
+    Route::post('/searchmember', 'MemberController@searchmember')->middleware('Admin');
 
-    Route::post('/addPost', 'PostController@addPost');
+    Route::post('/addPost', 'PostController@addPost')->middleware('Admin');
 
-    Route::post('/addcity', 'CityController@addcity');
+    Route::post('/addcity', 'CityController@addcity')->middleware('Admin');
 
-    Route::post('/sendmail', 'MailController@sendmail');
+    Route::post('/sendmail', 'MailController@sendmail')->middleware('Admin');
 
-    Route::post('/adddraft', 'MailController@adddraft');
+    Route::post('/adddraft', 'MailController@adddraft')->middleware('Admin');
 
     Route::post('/contactSave', 'ContactController@contactSave');
 
-    Route::post('/request', 'BlockedController@request');
+    Route::post('/request', 'BlockedController@request')->middleware('Admin');
 
 
     //staff Routes
@@ -168,6 +169,8 @@ Route::group(['middleware' => 'revalidate'], function()
   Route::get('contact','ContactController@contactView');
   Route::get('spots','BlogController@spots');
   Route::post('/Newsletter', 'BlogController@Newsletter');
+
+  Route::post('/contactSave', 'ContactController@contactSave');
 
 
 });

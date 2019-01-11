@@ -82,8 +82,17 @@
       <div class="col-half">
         <h4>City</h4>
         <div class="input-group">
-          <input class="input100" name="city" type="text" placeholder="Your City" required/>          
+        <select class="input100" placeholder="Enter Your City" name="city" required>
+          @if(count($cities)>0)
+            @foreach($cities->all() as $citie)
+              <option value="{{$citie->city_id}}">{{$citie->city_name}}</option>
+            @endforeach
+          @endif
+        </select>
         </div>
+        <!-- <div class="input-group">
+          <input class="input100" name="city" type="text" placeholder="Your City" required/>
+        </div> -->
       </div>
       <div class="col-half">
         <h4>Suburb</h4>

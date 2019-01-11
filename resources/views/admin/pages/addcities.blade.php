@@ -88,7 +88,7 @@
             <!-- /.box-body -->
             <div class="box-footer clearfix">
               <ul class="pagination pagination-sm no-margin pull-right">
-                {!! $citys->links(); !!}
+              {!! $citys->links(); !!}
               </ul>
             </div>
           </div>

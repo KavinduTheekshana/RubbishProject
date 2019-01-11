@@ -147,15 +147,16 @@ width: 50%;
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
+                  @foreach($notification as $noti)
                   <li>
-
                     <a href="#">
-                      <i class="fa fa-users text-aqua"></i> {!! substr(strip_tags($msg->message), 0, 30) !!}
-                        @if (strlen(strip_tags($msg->message)) > 30)
+                      <i class="fa fa-users text-aqua"></i> {!! substr(strip_tags($noti->message), 0, 50) !!}
+                        @if (strlen(strip_tags($noti->message)) > 50)
                              ...
                            @endif
                     </a>
                   </li>
+                  @endforeach
 
                 </ul>
               </li>
@@ -300,7 +301,7 @@ width: 50%;
           </ul>
         </li>
 
-        <li @if($title==='Add Cities') class="active" @endif>
+        <li @if($title==='Drop Locations') class="active" @endif>
           <a href="{{url('droplocation')}}">
             <i class="fa fa-map-marker"></i> <span>Garbage Spots</span>
             <span class="pull-right-container">
@@ -354,33 +355,33 @@ width: 50%;
 
 
 <!-- jQuery 3 -->
-<script src="Admin/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('Admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{asset('Admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
-<script src="Admin/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="{{asset('Admin/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="Admin/dist/js/adminlte.min.js"></script>
+<script src="{{asset('Admin/dist/js/adminlte.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="Admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script src="{{asset('Admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap  -->
-<script src="Admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="Admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{asset('Admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+<script src="{{asset('Admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- SlimScroll -->
-<script src="Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{asset('Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="Admin/bower_components/chart.js/Chart.js"></script>
+<script src="{{asset('Admin/bower_components/chart.js/Chart.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="Admin/dist/js/pages/dashboard2.js"></script>
+<script src="{{asset('Admin/dist/js/pages/dashboard2.js')}}Admin/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="Admin/dist/js/demo.js"></script>
+<script src="{{asset('Admin/dist/js/demo.js')}}"></script>
 <!-- iCheck -->
-<script src="Admin/plugins/iCheck/icheck.min.js"></script>
+<script src="{{asset('Admin/plugins/iCheck/icheck.min.js')}}"></script>
 
 <!-- CK Editor -->
-<script src="Admin/bower_components/ckeditor/ckeditor.js"></script>
+<script src="{{asset('Admin/bower_components/ckeditor/ckeditor.js')}}"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="{{asset('Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 
 <script src="crop/croppie.js"></script>
 <script>

@@ -26,8 +26,8 @@
                 <div class="mapBox">
 
                   <div style="height:100%;" id="map"></div>
-    <script>
 
+    <script>
       function initMap() {
         var myLatLng = {lat: 6.915729, lng: 79.863579};
 
@@ -89,6 +89,7 @@
                           {{ session('status') }}
                         </div>
                       @endif
+
                         <form class="row contact_form" action="{{action('ContactController@contactSave')}}" method="post" enctype="multipart/form-data">
                           @csrf
                             <div class="col-md-6">

@@ -41,7 +41,8 @@ class MemberController extends Controller
     $cities = citie::all();
 
     return view('admin.pages.addmember',['profile'=>$profile,'members'=>$members,
-    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,'cities'=>$cities,'notification'=>$notification]);
+    'title'=>$title,'messagecount'=>$messagecount,'message'=>$message,
+    'cities'=>$cities,'notification'=>$notification]);
   }
 
 

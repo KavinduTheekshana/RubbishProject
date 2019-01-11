@@ -27,15 +27,12 @@ class VolunteerController extends Controller
     $profile = DB::table('users')->join('cities','users.city','=','cities.city_id')->where(['id'=>$id])->first();
 
 
-    $messagecount=DB::table('messages')->where('read_or_not','0')->get();
-    $message=DB::table('messages')->where('read_or_not','0')->orderby('id','desc')->get();
 
-    $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
 
     $location=DB::table('drop_locations')->where([['job_status','1'],['email',$email]])->get();
 
     return view('volunteer/volunteerprofile',['profile'=>$profile,'title'=>$title,
-    'messagecount'=>$messagecount,'message'=>$message,'notification'=>$notification,'location'=>$location]);
+    'location'=>$location]);
   }
 
       public function Submit(){

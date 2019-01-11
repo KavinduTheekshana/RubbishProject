@@ -26,6 +26,8 @@ class BlogController extends Controller
     return view('blog.index',['posts'=>$posts,'slider'=>$slider,'title'=>$title,'footer'=>$footer]);
   }
 
+  
+
   public function viewpost($post_id){
 
     $post =DB::table('posts')->join('users','posts.user_id','=','users.id')->where(['posts.postid'=>$post_id])->get();

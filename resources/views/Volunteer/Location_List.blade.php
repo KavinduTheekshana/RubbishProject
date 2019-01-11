@@ -130,6 +130,7 @@
                             <a class="btn btn-danger disabled" ><i class="fa fa-trash" ></i></a>
                           @endif</td>
 
+                        <!-- delete popup -->
                           <div class="modal modal-danger fade" id="modal-danger">
                             <div class="modal-dialog">
                               <div class="modal-content">

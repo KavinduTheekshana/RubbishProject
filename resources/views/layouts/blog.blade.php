@@ -8,17 +8,17 @@
         <title>CMCSCS | {{$title}}</title>
         <!-- Bootstrap CSS -->
         <link rel="icon" type="image/png" href="icon/favicon.ico"/>
-        <link rel="stylesheet" href="blog/css/bootstrap.css">
-        <link rel="stylesheet" href="blog/vendors/linericon/style.css">
-        <link rel="stylesheet" href="blog/css/font-awesome.min.css">
-        <link rel="stylesheet" href="blog/vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="blog/vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="blog/vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="blog/vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="blog/vendors/jquery-ui/jquery-ui.css">
+        <link rel="stylesheet" href="{{asset('blog/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/linericon/style.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/owl-carousel/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/lightbox/simpleLightbox.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/nice-select/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/animate-css/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/vendors/jquery-ui/jquery-ui.css')}}">
         <!-- main css -->
-        <link rel="stylesheet" href="blog/css/style.css">
-        <link rel="stylesheet" href="blog/css/responsive.css">
+        <link rel="stylesheet" href="{{asset('blog/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('blog/css/responsive.css')}}">
     </head>
     <body>
 
@@ -145,19 +145,19 @@ Copyright &copy; 2018-2019 <a href="www.cmcscs.lk">CMCSCS</a> All rights reserve
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="blog/js/jquery-3.2.1.min.js"></script>
-        <script src="blog/js/popper.js"></script>
-        <script src="blog/js/bootstrap.min.js"></script>
-        <script src="blog/js/stellar.js"></script>
-        <script src="blog/vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="blog/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="blog/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="blog/vendors/isotope/isotope-min.js"></script>
-        <script src="blog/vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="blog/vendors/jquery-ui/jquery-ui.js"></script>
-        <script src="blog/js/jquery.ajaxchimp.min.js"></script>
-        <script src="blog/js/mail-script.js"></script>
-        <script src="blog/js/theme.js"></script>
+        <script src="{{asset('blog/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{asset('blog/js/popper.js')}}"></script>
+        <script src="{{asset('blog/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('blog/js/stellar.js')}}"></script>
+        <script src="{{asset('blog/vendors/lightbox/simpleLightbox.min.js')}}"></script>
+        <script src="{{asset('blog/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+        <script src="{{asset('blog/vendors/isotope/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{asset('blog/vendors/isotope/isotope-min.js')}}"></script>
+        <script src="{{asset('blog/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('blog/vendors/jquery-ui/jquery-ui.js')}}"></script>
+        <script src="{{asset('blog/js/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('blog/js/mail-script.js')}}"></script>
+        <script src="{{asset('blog/js/theme.js')}}"></script>
 
 
 

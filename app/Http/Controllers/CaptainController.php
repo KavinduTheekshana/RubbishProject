@@ -162,7 +162,7 @@ class CaptainController extends Controller
 
                 $notification=DB::table('notifications')->where('read_or_not','0')->orderby('id','desc')->get();
 
-                $location=DB::table('drop_locations')->orderBy('id', 'desc')->get();
+                $location=DB::table('drop_locations')->where('verified_status','0')->orderBy('id', 'desc')->get();
 
               return view('captain/pendingtoapprove',['users'=>$data,'members'=>$members,
                 'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,

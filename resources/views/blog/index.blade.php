@@ -19,7 +19,7 @@
                      ...
                    @endif</h4></a>
 							<p>{!! substr(strip_tags($slider->post_body), 0, 100) !!}
-                @if (strlen(strip_tags($slider->post_body)) > 10)
+                @if (strlen(strip_tags($slider->post_body)) > 100)
                      ...
                    @endif</p>
 							<div class="date">

@@ -16,6 +16,9 @@ class AdminController extends Controller
       $title='Dashboard';
 
       $data = DB::table('users')->count();
+      $PendintoCleane = DB::table('drop_locations')->where('job_status', '0')->count();
+      $PendintoApprove = DB::table('drop_locations')->where('verified_status', '0')->count();
+      $TotalCleanePoint = DB::table('drop_locations')->where('job_status', '1')->count();
       $members = DB::table('users')->orderBy('id', 'desc')->paginate(8);
       $id =Auth::user()->id;
       $profile = DB::table('users')->where(['id'=>$id])->first();
@@ -26,7 +29,8 @@ class AdminController extends Controller
       $cities = citie::all();
       $location=DB::table('drop_locations')->where('job_status','0')->get();
 
-    return view('admin.Dashboard',['users'=>$data,'members'=>$members,
+    return view('admin.Dashboard',['users'=>$data,'PendintoCleane'=>$PendintoCleane,
+    'PendintoApprove'=>$PendintoApprove,'TotalCleanePoint'=>$TotalCleanePoint,'members'=>$members,
       'profile'=>$profile,'title'=>$title,'post'=>$post,'messagecount'=>$messagecount,'message'=>$message,
       'notification'=>$notification,'cities'=>$cities,'location'=>$location]);
     }
