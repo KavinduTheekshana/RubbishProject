@@ -97,7 +97,7 @@ in this area and then garbage trucks collect them.
 
 
 <div>
-<img src="public\Screen Shot\2.png"><br>
+<img src="public\Screen Shot\2.jpg"><br>
 If anyone needs to join with us as a volunteer he/she can sign up filling this form. This form required
 some details such as name, e-mail address etc.
 </div>
