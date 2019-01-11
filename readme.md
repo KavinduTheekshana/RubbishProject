@@ -1,59 +1,64 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="public\blog\img\logo2.png"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## About CMCSCS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Colombo Municipal Council (CMC) needed to introduce new website as option to garbage
+collection. Mainly there has Admin, Captain (Manager), Volunteers, Staff. Public members can log into
+this site and they can see articles in the website posted by admin and garbage collection spots. If anyone
+likes to join with us they can Sign Up freely and after they add into our site as volunteer and Out of these,
+one is selected as captain by admin. Members of the CMCSCS get an account after register in our site and
+they can change their own profile picture and account password, If forgot password then he/she can reset
+the password using email but they should remember their username. After click on forget password will
+appear form to fill after filling that form we send link to their email and they can visit to that link and will
+appear new window and they create new password.
+Volunteer can report about thrown away garbage and can select level of garbage and set that
+location and also they can take pictures and upload as well as they can explain the impact of throwing
+garbage. Manager can check about that incident and he/she need to verify it after verify it garbage trucks
+can collect them. If anyone cleaned that place before us volunteer can delete or update him/her post
+before approving post by captain because staff can only clean that place after approving it by captain.
+Captains have to check volunteers post are they true or not after checking he/she can approved it.
+If volunteer put Level of garbage wrongly by mistaking, captain can change that garbage level and verify
+it. If some volunteer post wrong information, captain can delete it. Staff can collect garbage, after report
+accepting by captain.
+Garbage collection staff can identify garbage collection spots approved by captain on a map and
+they also can see articles posted by admin. After cleaning that place staff can mark it as completed and
+also they can upload a picture after cleaning that place.
+There should be an Administrator and he/she can create accounts for the captain, volunteer and
+for the garbage collecting staff. Admin can post articles about garbage and he/she can add garbage
+collection spots and garbage location on the map. Admin has dashboard and from that admin can see
+pending cleaning places and orders to have approve and total cleaned points have they done and number
+of members. Admin can change job type of the members. As an example admin can appoint volunteer as
+captain (can change job role). Anyone can send messages such as complains or new ideas to improve our
+site, to the admin via blog and admin can read that all and if need to reply to someone admin can do it.
+Admin has power to block an account and remove member and if some volunteer post wrong information
+admin can take an action against to that member. In the below mention access level in the system
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+<ul>
+<li>Administrator</li>
+<li>Captain</li>
+<li>Volunteer</li>
+<li>Staff</li>
+<li>Public</li>
+</ul>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+## Technologies Used
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+We used [Laravel 5.7 version PHP framework](https://laravel.com/), it created by Taylor Otwell. Laravel is simple framework
+to learn and use and also easily we could to access MVC architecture.Laravel’s Eloquent Query Builder used to
+interact with database which is built on Bootstrap 4 using jQuery and CK Editor
 
-## Laravel Sponsors
+MySQL used for the database system and in additionally we used two themes such as<br>
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+[Admin-LTE](https://adminlte.io/themes/AdminLTE/index.html): used to create admin dashboard and it get from the Github.<br>
+[Fantom Blog Theame](https://colorlib.com/preview/theme/fantom/): used to create blog
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
+
+
+## User Story
+<p align="center"><img src="public\Screen Shot\userstory.jpg"></p>
 
 ## Contributing
 
