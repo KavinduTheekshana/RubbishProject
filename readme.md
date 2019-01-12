@@ -62,6 +62,7 @@ MySQL used for the database system and in additionally we used two themes such a
 <li> Clone: <code> https://github.com/KavinduTheekshana/RubbishProject.git</code></li>
 </ul>
 <br>
+<b>Note :</b> Replace Google Map Api Key 
 
 
 
